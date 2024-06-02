@@ -1,0 +1,1058 @@
+2024-01-28 12:01:12,514 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:02:12,521 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:02:25,044 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:03:25,048 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:04:25,049 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:05:25,051 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:06:25,056 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:07:25,057 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:08:25,059 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:09:25,062 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:10:06,761 - INFO - Received termination signal. Exiting gracefully.
+2024-01-28 12:10:12,935 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:11:12,937 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:12:12,939 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:13:12,941 - ERROR - An error occurred: Working outside of application context.
+
+This typically means that you attempted to use functionality that needed
+the current application. To solve this, set up an application context
+with app.app_context(). See the documentation for more information.
+2024-01-28 12:14:04,293 - INFO - Received termination signal. Exiting gracefully.
+INFO:root:Checked and sent emails at 19:19
+INFO:root:Checked and sent emails at 19:23
+INFO:root:Email sent successfully to sarathkuruganti@gmail.com
+INFO:root:Checked and sent emails at 19:24
+INFO:root:Checked and sent emails at 19:25
+INFO:root:Checked and sent emails at 19:26
+INFO:root:Checked and sent emails at 19:27
+INFO:root:Checked and sent emails at 19:28
+INFO:root:Shutting down gracefully...
+INFO:root:Checked and sent emails at 19:28
+INFO:root:Shutting down gracefully...
+INFO:root:Checked and sent emails at 19:29
+INFO:root:Checked and sent emails at 19:31
+INFO:root:Checked and sent emails at 19:32
+INFO:root:Checked and sent emails at 19:33
+INFO:root:Checked and sent emails at 19:34
+INFO:root:Checked and sent emails at 19:35
+INFO:root:Checked and sent emails at 19:36
+INFO:root:Checked and sent emails at 19:37
+INFO:root:Checked and sent emails at 19:38
+INFO:root:Checked and sent emails at 19:39
+INFO:root:Checked and sent emails at 19:40
+INFO:root:Checked and sent emails at 19:41
+INFO:root:Checked and sent emails at 19:42
+INFO:root:Checked and sent emails at 19:43
+INFO:root:Checked and sent emails at 19:44
+INFO:root:Checked and sent emails at 19:45
+INFO:root:Checked and sent emails at 19:47
+INFO:root:Checked and sent emails at 19:48
+INFO:root:Checked and sent emails at 19:49
+INFO:root:Email sent successfully to srujanapeddi84@gmail.com
+INFO:root:Checked and sent emails at 19:50
+INFO:root:Checked and sent emails at 19:51
+INFO:root:Checked and sent emails at 19:52
+INFO:root:Checked and sent emails at 19:53
+INFO:root:Checked and sent emails at 19:54
+INFO:root:Checked and sent emails at 19:55
+INFO:root:Checked and sent emails at 19:56
+INFO:root:Checked and sent emails at 19:57
+INFO:root:Checked and sent emails at 19:58
+INFO:root:Checked and sent emails at 19:59
+INFO:root:Checked and sent emails at 20:00
+INFO:root:Checked and sent emails at 20:01
+INFO:root:Email sent successfully to sarathkuruganti@gmail.com
+INFO:root:Checked and sent emails at 20:02
+INFO:root:Checked and sent emails at 20:03
+INFO:root:Checked and sent emails at 20:04
+INFO:root:Checked and sent emails at 20:05
+INFO:root:Checked and sent emails at 20:06
+INFO:root:Checked and sent emails at 20:07
+INFO:root:Checked and sent emails at 20:08
+INFO:root:Checked and sent emails at 20:09
+INFO:root:Checked and sent emails at 20:10
+INFO:root:Checked and sent emails at 20:11
+INFO:root:Checked and sent emails at 20:12
+INFO:root:Checked and sent emails at 20:13
+INFO:root:Checked and sent emails at 20:14
+INFO:root:Checked and sent emails at 20:15
+INFO:root:Checked and sent emails at 20:16
+INFO:root:Checked and sent emails at 20:17
+INFO:root:Checked and sent emails at 20:18
+INFO:root:Checked and sent emails at 20:19
+INFO:root:Checked and sent emails at 20:20
+INFO:root:Checked and sent emails at 20:21
+INFO:root:Checked and sent emails at 20:22
+INFO:root:Checked and sent emails at 20:23
+INFO:root:Checked and sent emails at 20:24
+INFO:root:Checked and sent emails at 20:25
+INFO:root:Checked and sent emails at 20:26
+INFO:root:Checked and sent emails at 20:27
+INFO:root:Checked and sent emails at 20:28
+INFO:root:Checked and sent emails at 20:29
+INFO:root:Checked and sent emails at 20:30
+INFO:root:Checked and sent emails at 20:31
+INFO:root:Checked and sent emails at 20:32
+INFO:root:Checked and sent emails at 20:33
+INFO:root:Checked and sent emails at 20:34
+INFO:root:Checked and sent emails at 20:35
+INFO:root:Checked and sent emails at 20:36
+INFO:root:Checked and sent emails at 20:37
+INFO:root:Checked and sent emails at 20:38
+INFO:root:Checked and sent emails at 20:39
+INFO:root:Checked and sent emails at 20:40
+INFO:root:Checked and sent emails at 20:41
+INFO:root:Checked and sent emails at 20:42
+INFO:root:Checked and sent emails at 20:43
+INFO:root:Checked and sent emails at 20:44
+INFO:root:Checked and sent emails at 20:45
+INFO:root:Checked and sent emails at 20:46
+INFO:root:Checked and sent emails at 20:47
+INFO:root:Checked and sent emails at 20:48
+INFO:root:Checked and sent emails at 20:49
+INFO:root:Checked and sent emails at 20:50
+INFO:root:Checked and sent emails at 20:51
+INFO:root:Checked and sent emails at 20:52
+INFO:root:Checked and sent emails at 12:51
+INFO:root:Checked and sent emails at 12:52
+INFO:root:Checked and sent emails at 12:53
+INFO:root:Checked and sent emails at 12:54
+INFO:root:Checked and sent emails at 12:55
+INFO:root:Checked and sent emails at 12:56
+INFO:root:Checked and sent emails at 12:57
+INFO:root:Checked and sent emails at 12:58
+INFO:root:Checked and sent emails at 12:59
+INFO:root:Checked and sent emails at 13:00
+INFO:root:Checked and sent emails at 13:01
+INFO:root:Checked and sent emails at 13:02
+INFO:root:Checked and sent emails at 13:03
+INFO:root:Checked and sent emails at 13:04
+INFO:root:Checked and sent emails at 13:05
+INFO:root:Checked and sent emails at 13:06
+INFO:root:Checked and sent emails at 13:07
+INFO:root:Checked and sent emails at 13:08
+INFO:root:Checked and sent emails at 13:09
+INFO:root:Checked and sent emails at 13:10
+INFO:root:Checked and sent emails at 13:11
+INFO:root:Checked and sent emails at 13:12
+INFO:root:Checked and sent emails at 13:13
+INFO:root:Checked and sent emails at 13:14
+INFO:root:Checked and sent emails at 13:15
+INFO:root:Checked and sent emails at 13:16
+INFO:root:Checked and sent emails at 13:17
+INFO:root:Checked and sent emails at 13:18
+INFO:root:Checked and sent emails at 13:19
+INFO:root:Checked and sent emails at 13:20
+INFO:root:Checked and sent emails at 13:21
+INFO:root:Checked and sent emails at 13:22
+INFO:root:Checked and sent emails at 13:23
+INFO:root:Checked and sent emails at 13:24
+INFO:root:Checked and sent emails at 13:25
+INFO:root:Checked and sent emails at 13:26
+INFO:root:Checked and sent emails at 13:27
+INFO:root:Checked and sent emails at 13:28
+INFO:root:Checked and sent emails at 13:29
+INFO:root:Checked and sent emails at 13:30
+INFO:root:Checked and sent emails at 13:31
+INFO:root:Checked and sent emails at 13:32
+INFO:root:Checked and sent emails at 13:33
+INFO:root:Checked and sent emails at 13:34
+INFO:root:Checked and sent emails at 13:36
+INFO:root:Checked and sent emails at 13:37
+INFO:root:Checked and sent emails at 13:38
+INFO:root:Checked and sent emails at 13:39
+INFO:root:Checked and sent emails at 13:40
+INFO:root:Checked and sent emails at 13:41
+INFO:root:Checked and sent emails at 13:42
+INFO:root:Checked and sent emails at 13:43
+INFO:root:Checked and sent emails at 13:44
+INFO:root:Checked and sent emails at 13:45
+INFO:root:Checked and sent emails at 13:46
+INFO:root:Checked and sent emails at 13:47
+INFO:root:Checked and sent emails at 13:48
+INFO:root:Checked and sent emails at 13:49
+INFO:root:Checked and sent emails at 08:55
+INFO:root:Checked and sent emails at 08:56
+INFO:root:Checked and sent emails at 08:57
+INFO:root:Checked and sent emails at 08:58
+INFO:root:Checked and sent emails at 08:59
+INFO:root:Checked and sent emails at 09:00
+INFO:root:Checked and sent emails at 09:01
+INFO:root:Checked and sent emails at 09:02
+INFO:root:Checked and sent emails at 09:03
+INFO:root:Checked and sent emails at 09:04
+INFO:root:Checked and sent emails at 09:05
+INFO:root:Checked and sent emails at 09:06
+INFO:root:Checked and sent emails at 09:07
+INFO:root:Checked and sent emails at 09:08
+INFO:root:Checked and sent emails at 09:09
+INFO:root:Checked and sent emails at 09:10
+INFO:root:Checked and sent emails at 09:11
+INFO:root:Checked and sent emails at 09:12
+INFO:root:Checked and sent emails at 09:13
+INFO:root:Checked and sent emails at 09:14
+INFO:root:Checked and sent emails at 09:15
+INFO:root:Checked and sent emails at 09:16
+INFO:root:Checked and sent emails at 09:17
+INFO:root:Checked and sent emails at 09:18
+INFO:root:Checked and sent emails at 09:19
+INFO:root:Checked and sent emails at 09:20
+INFO:root:Checked and sent emails at 09:21
+INFO:root:Checked and sent emails at 09:22
+INFO:root:Checked and sent emails at 09:23
+INFO:root:Checked and sent emails at 09:24
+INFO:root:Checked and sent emails at 09:25
+INFO:root:Checked and sent emails at 09:26
+INFO:root:Checked and sent emails at 09:27
+INFO:root:Checked and sent emails at 09:29
+INFO:root:Checked and sent emails at 09:30
+INFO:root:Checked and sent emails at 09:31
+INFO:root:Checked and sent emails at 09:32
+INFO:root:Checked and sent emails at 09:33
+INFO:root:Checked and sent emails at 09:34
+INFO:root:Checked and sent emails at 09:35
+INFO:root:Checked and sent emails at 11:20
+INFO:root:Checked and sent emails at 11:21
+INFO:root:Checked and sent emails at 11:22
+INFO:root:Checked and sent emails at 11:23
+INFO:root:Checked and sent emails at 11:24
+INFO:root:Checked and sent emails at 11:25
+INFO:root:Checked and sent emails at 11:26
+INFO:root:Checked and sent emails at 11:27
+INFO:root:Checked and sent emails at 11:28
+INFO:root:Checked and sent emails at 11:29
+INFO:root:Checked and sent emails at 11:30
+INFO:root:Checked and sent emails at 20:51
+INFO:root:Shutting down gracefully...
+INFO:root:Checked and sent emails at 20:45
+INFO:root:Shutting down gracefully...
+INFO:root:Checked and sent emails at 20:59
+INFO:root:Checked and sent emails at 21:00
+INFO:root:Email sent successfully to atchukolus@gmail.com
+INFO:root:Checked and sent emails at 21:01
+INFO:root:Checked and sent emails at 21:03
+INFO:root:Checked and sent emails at 21:04
+INFO:root:Checked and sent emails at 21:05
+INFO:root:Checked and sent emails at 21:06
+INFO:root:Checked and sent emails at 21:07
+INFO:root:Checked and sent emails at 21:08
+INFO:root:Checked and sent emails at 21:09
+INFO:root:Checked and sent emails at 21:13
+INFO:root:Checked and sent emails at 21:14
+INFO:root:Checked and sent emails at 21:15
+INFO:root:Checked and sent emails at 21:16
+INFO:root:Checked and sent emails at 21:17
+INFO:root:Checked and sent emails at 21:18
+INFO:root:Checked and sent emails at 21:19
+INFO:root:Checked and sent emails at 21:20
+INFO:root:Checked and sent emails at 21:21
+INFO:root:Checked and sent emails at 21:22
+INFO:root:Checked and sent emails at 21:23
+INFO:root:Checked and sent emails at 21:24
+INFO:root:Checked and sent emails at 21:25
+INFO:root:Checked and sent emails at 21:26
+INFO:root:Checked and sent emails at 21:58
+INFO:root:Checked and sent emails at 21:59
+INFO:root:Checked and sent emails at 22:00
+INFO:root:Checked and sent emails at 22:01
+INFO:root:Checked and sent emails at 22:02
+INFO:root:Checked and sent emails at 22:03
+INFO:root:Checked and sent emails at 22:04
+INFO:root:Checked and sent emails at 22:05
+INFO:root:Checked and sent emails at 22:06
+INFO:root:Checked and sent emails at 22:07
+INFO:root:Checked and sent emails at 22:08
+INFO:root:Checked and sent emails at 22:09
+INFO:root:Checked and sent emails at 22:10
+INFO:root:Checked and sent emails at 22:11
+INFO:root:Checked and sent emails at 22:12
+INFO:root:Checked and sent emails at 22:13
+INFO:root:Checked and sent emails at 22:14
+INFO:root:Checked and sent emails at 22:15
+INFO:root:Checked and sent emails at 22:16
+INFO:root:Checked and sent emails at 22:17
+INFO:root:Checked and sent emails at 22:18
+INFO:root:Checked and sent emails at 22:19
+INFO:root:Checked and sent emails at 22:20
+INFO:root:Checked and sent emails at 22:21
+INFO:root:Checked and sent emails at 22:22
+INFO:root:Checked and sent emails at 22:23
+INFO:root:Checked and sent emails at 22:24
+INFO:root:Checked and sent emails at 22:25
+INFO:root:Checked and sent emails at 22:26
+INFO:root:Checked and sent emails at 22:27
+INFO:root:Checked and sent emails at 22:28
+INFO:root:Checked and sent emails at 22:29
+INFO:root:Checked and sent emails at 22:30
+INFO:root:Checked and sent emails at 22:31
+INFO:root:Checked and sent emails at 22:32
+INFO:root:Checked and sent emails at 22:33
+INFO:root:Checked and sent emails at 22:34
+INFO:root:Checked and sent emails at 22:35
+INFO:root:Checked and sent emails at 22:04
+INFO:root:Email sent successfully to atchukolus@gmail.com
+INFO:root:Checked and sent emails at 22:05
+INFO:root:Checked and sent emails at 22:06
+INFO:root:Checked and sent emails at 22:07
+INFO:root:Checked and sent emails at 22:08
+INFO:root:Checked and sent emails at 22:09
+INFO:root:Checked and sent emails at 22:10
+INFO:root:Checked and sent emails at 22:11
+INFO:root:Checked and sent emails at 22:12
+INFO:root:Checked and sent emails at 22:13
+INFO:root:Checked and sent emails at 22:14
+INFO:root:Checked and sent emails at 22:15
+INFO:root:Checked and sent emails at 22:16
+INFO:root:Checked and sent emails at 22:17
+INFO:root:Checked and sent emails at 22:18
+INFO:root:Checked and sent emails at 22:19
+INFO:root:Checked and sent emails at 22:20
+INFO:root:Checked and sent emails at 22:21
+INFO:root:Checked and sent emails at 22:22
+INFO:root:Checked and sent emails at 22:23
+INFO:root:Checked and sent emails at 22:24
+INFO:root:Checked and sent emails at 22:25
+INFO:root:Checked and sent emails at 22:26
+INFO:root:Checked and sent emails at 22:27
+INFO:root:Checked and sent emails at 22:28
+INFO:root:Checked and sent emails at 22:29
+INFO:root:Checked and sent emails at 22:30
+INFO:root:Checked and sent emails at 22:31
+INFO:root:Checked and sent emails at 22:32
+INFO:root:Checked and sent emails at 22:33
+INFO:root:Checked and sent emails at 22:43
+INFO:root:Checked and sent emails at 22:44
+INFO:root:Checked and sent emails at 22:45
+INFO:root:Checked and sent emails at 22:46
+INFO:root:Checked and sent emails at 22:47
+INFO:root:Checked and sent emails at 22:48
+INFO:root:Checked and sent emails at 22:49
+INFO:root:Checked and sent emails at 22:50
+INFO:root:Checked and sent emails at 22:51
+INFO:root:Checked and sent emails at 22:52
+INFO:root:Checked and sent emails at 22:53
+INFO:root:Checked and sent emails at 22:54
+INFO:root:Checked and sent emails at 22:55
+INFO:root:Checked and sent emails at 22:56
+INFO:root:Checked and sent emails at 22:57
+INFO:root:Checked and sent emails at 22:58
+INFO:root:Checked and sent emails at 22:59
+INFO:root:Checked and sent emails at 23:00
+INFO:root:Checked and sent emails at 23:01
+INFO:root:Checked and sent emails at 23:02
+INFO:root:Checked and sent emails at 23:03
+INFO:root:Checked and sent emails at 23:04
+INFO:root:Checked and sent emails at 23:05
+INFO:root:Checked and sent emails at 23:06
+INFO:root:Checked and sent emails at 23:07
+INFO:root:Checked and sent emails at 09:44
+INFO:root:Checked and sent emails at 09:45
+INFO:root:Checked and sent emails at 09:46
+INFO:root:Checked and sent emails at 09:47
+INFO:root:Checked and sent emails at 09:48
+INFO:root:Checked and sent emails at 09:49
+INFO:root:Checked and sent emails at 09:50
+INFO:root:Checked and sent emails at 09:51
+INFO:root:Checked and sent emails at 09:52
+INFO:root:Checked and sent emails at 09:53
+INFO:root:Checked and sent emails at 09:54
+INFO:root:Checked and sent emails at 09:55
+INFO:root:Checked and sent emails at 09:56
+INFO:root:Checked and sent emails at 09:57
+INFO:root:Checked and sent emails at 09:58
+INFO:root:Checked and sent emails at 09:59
+INFO:root:Checked and sent emails at 10:00
+INFO:root:Checked and sent emails at 10:01
+INFO:root:Checked and sent emails at 10:02
+INFO:root:Checked and sent emails at 10:03
+INFO:root:Checked and sent emails at 10:04
+INFO:root:Checked and sent emails at 10:05
+INFO:root:Checked and sent emails at 10:06
+INFO:root:Checked and sent emails at 10:07
+INFO:root:Checked and sent emails at 10:08
+INFO:root:Checked and sent emails at 10:09
+INFO:root:Checked and sent emails at 10:10
+INFO:root:Checked and sent emails at 10:11
+INFO:root:Checked and sent emails at 10:12
+INFO:root:Checked and sent emails at 10:13
+INFO:root:Checked and sent emails at 10:14
+INFO:root:Checked and sent emails at 10:15
+INFO:root:Checked and sent emails at 10:16
+INFO:root:Checked and sent emails at 10:17
+INFO:root:Checked and sent emails at 10:18
+INFO:root:Checked and sent emails at 10:19
+INFO:root:Checked and sent emails at 10:20
+INFO:root:Checked and sent emails at 10:21
+INFO:root:Checked and sent emails at 10:22
+INFO:root:Checked and sent emails at 10:23
+INFO:root:Checked and sent emails at 10:24
+INFO:root:Checked and sent emails at 10:25
+INFO:root:Checked and sent emails at 10:26
+INFO:root:Checked and sent emails at 10:27
+INFO:root:Checked and sent emails at 10:28
+INFO:root:Checked and sent emails at 10:29
+INFO:root:Checked and sent emails at 10:30
+INFO:root:Checked and sent emails at 10:32
+INFO:root:Checked and sent emails at 10:33
+INFO:root:Checked and sent emails at 10:34
+INFO:root:Checked and sent emails at 10:35
+INFO:root:Checked and sent emails at 10:36
+INFO:root:Checked and sent emails at 10:37
+INFO:root:Checked and sent emails at 10:38
+INFO:root:Checked and sent emails at 10:39
+INFO:root:Checked and sent emails at 10:40
+INFO:root:Checked and sent emails at 10:41
+INFO:root:Checked and sent emails at 10:42
+INFO:root:Checked and sent emails at 10:43
+INFO:root:Checked and sent emails at 10:44
+INFO:root:Checked and sent emails at 10:45
+INFO:root:Checked and sent emails at 10:46
+INFO:root:Checked and sent emails at 10:47
+INFO:root:Checked and sent emails at 10:48
+INFO:root:Checked and sent emails at 10:49
+INFO:root:Checked and sent emails at 10:50
+INFO:root:Checked and sent emails at 10:51
+INFO:root:Checked and sent emails at 10:52
+INFO:root:Checked and sent emails at 10:53
+INFO:root:Checked and sent emails at 10:54
+INFO:root:Checked and sent emails at 10:55
+INFO:root:Checked and sent emails at 10:56
+INFO:root:Checked and sent emails at 10:57
+INFO:root:Checked and sent emails at 10:58
+INFO:root:Checked and sent emails at 10:59
+INFO:root:Checked and sent emails at 11:00
+INFO:root:Checked and sent emails at 11:01
+INFO:root:Checked and sent emails at 11:02
+INFO:root:Checked and sent emails at 11:03
+INFO:root:Checked and sent emails at 11:04
+INFO:root:Checked and sent emails at 11:05
+INFO:root:Checked and sent emails at 11:06
+INFO:root:Checked and sent emails at 11:07
+INFO:root:Checked and sent emails at 11:08
+INFO:root:Checked and sent emails at 11:09
+INFO:root:Checked and sent emails at 11:10
+INFO:root:Checked and sent emails at 11:11
+INFO:root:Checked and sent emails at 11:12
+INFO:root:Checked and sent emails at 11:13
+INFO:root:Checked and sent emails at 11:14
+INFO:root:Checked and sent emails at 11:15
+INFO:root:Checked and sent emails at 11:16
+INFO:root:Checked and sent emails at 12:26
+INFO:root:Checked and sent emails at 16:07
+INFO:root:Checked and sent emails at 16:08
+INFO:root:Checked and sent emails at 16:09
+INFO:root:Checked and sent emails at 17:01
+INFO:root:Checked and sent emails at 17:02
+INFO:root:Checked and sent emails at 17:03
+INFO:root:Checked and sent emails at 17:04
+INFO:root:Checked and sent emails at 17:05
+INFO:root:Checked and sent emails at 17:06
+INFO:root:Checked and sent emails at 17:07
+INFO:root:Checked and sent emails at 17:08
+INFO:root:Checked and sent emails at 17:09
+INFO:root:Checked and sent emails at 17:10
+INFO:root:Checked and sent emails at 17:11
+INFO:root:Checked and sent emails at 17:12
+INFO:root:Checked and sent emails at 17:13
+INFO:root:Checked and sent emails at 17:14
+INFO:root:Checked and sent emails at 17:15
+INFO:root:Checked and sent emails at 17:16
+INFO:root:Checked and sent emails at 17:17
+INFO:root:Checked and sent emails at 17:18
+INFO:root:Checked and sent emails at 17:19
+INFO:root:Checked and sent emails at 17:20
+INFO:root:Checked and sent emails at 17:21
+INFO:root:Checked and sent emails at 18:57
+INFO:root:Checked and sent emails at 18:58
+INFO:root:Checked and sent emails at 18:59
+INFO:root:Checked and sent emails at 19:00
+INFO:root:Checked and sent emails at 19:01
+INFO:root:Checked and sent emails at 19:02
+INFO:root:Checked and sent emails at 19:03
+INFO:root:Checked and sent emails at 19:04
+INFO:root:Checked and sent emails at 19:05
+INFO:root:Checked and sent emails at 19:06
+INFO:root:Checked and sent emails at 19:07
+INFO:root:Checked and sent emails at 19:08
+INFO:root:Checked and sent emails at 19:09
+INFO:root:Checked and sent emails at 19:10
+INFO:root:Checked and sent emails at 19:11
+INFO:root:Checked and sent emails at 19:12
+INFO:root:Checked and sent emails at 19:13
+INFO:root:Checked and sent emails at 19:14
+INFO:root:Checked and sent emails at 19:15
+INFO:root:Checked and sent emails at 19:16
+INFO:root:Checked and sent emails at 19:17
+INFO:root:Checked and sent emails at 19:18
+INFO:root:Checked and sent emails at 19:19
+INFO:root:Checked and sent emails at 19:20
+INFO:root:Checked and sent emails at 19:21
+INFO:root:Shutting down gracefully...
+INFO:root:Checked and sent emails at 10:44
+INFO:root:Checked and sent emails at 10:45
+INFO:root:Checked and sent emails at 10:46
+INFO:root:Checked and sent emails at 11:45
+INFO:root:Checked and sent emails at 11:46
+INFO:root:Checked and sent emails at 11:47
+INFO:root:Checked and sent emails at 11:48
+INFO:root:Shutting down gracefully...
+INFO:root:Checked and sent emails at 11:49
+INFO:root:Checked and sent emails at 11:50
+INFO:root:Checked and sent emails at 11:51
+INFO:root:Checked and sent emails at 11:52
+INFO:root:Checked and sent emails at 11:53
+INFO:root:Checked and sent emails at 11:54
+INFO:root:Checked and sent emails at 12:08
+INFO:root:Checked and sent emails at 12:09
+INFO:root:Checked and sent emails at 12:10
+INFO:root:Checked and sent emails at 12:11
+INFO:root:Checked and sent emails at 12:12
+INFO:root:Checked and sent emails at 12:13
+INFO:root:Checked and sent emails at 12:14
+INFO:root:Checked and sent emails at 12:15
+INFO:root:Checked and sent emails at 12:16
+INFO:root:Checked and sent emails at 12:17
+INFO:root:Checked and sent emails at 12:18
+INFO:root:Checked and sent emails at 12:20
+INFO:root:Checked and sent emails at 12:22
+INFO:root:Checked and sent emails at 12:23
+ERROR:root:An error occurred: _ssl.c:1112: The handshake operation timed out
+ERROR:root:An error occurred: _ssl.c:1112: The handshake operation timed out
+INFO:root:Checked and sent emails at 12:26
+INFO:root:Email sent successfully to rizwanasyed592@gmail.com
+INFO:root:Checked and sent emails at 12:27
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 12:32
+INFO:root:Checked and sent emails at 12:33
+INFO:root:Checked and sent emails at 12:34
+INFO:root:Checked and sent emails at 12:35
+INFO:root:Checked and sent emails at 12:36
+INFO:root:Checked and sent emails at 12:37
+INFO:root:Checked and sent emails at 12:38
+INFO:root:Checked and sent emails at 12:40
+INFO:root:Checked and sent emails at 12:41
+INFO:root:Checked and sent emails at 12:42
+INFO:root:Checked and sent emails at 12:43
+INFO:root:Checked and sent emails at 12:44
+INFO:root:Checked and sent emails at 12:45
+INFO:root:Checked and sent emails at 12:46
+INFO:root:Checked and sent emails at 12:47
+INFO:root:Checked and sent emails at 12:48
+INFO:root:Checked and sent emails at 12:49
+INFO:root:Checked and sent emails at 12:50
+INFO:root:Checked and sent emails at 12:51
+INFO:root:Checked and sent emails at 12:52
+INFO:root:Checked and sent emails at 12:53
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 12:55
+INFO:root:Checked and sent emails at 12:56
+INFO:root:Checked and sent emails at 12:57
+INFO:root:Checked and sent emails at 12:58
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 13:02
+INFO:root:Checked and sent emails at 13:03
+INFO:root:Checked and sent emails at 13:04
+INFO:root:Checked and sent emails at 13:05
+INFO:root:Checked and sent emails at 13:06
+INFO:root:Checked and sent emails at 13:08
+INFO:root:Checked and sent emails at 13:09
+INFO:root:Checked and sent emails at 13:10
+INFO:root:Checked and sent emails at 13:11
+INFO:root:Checked and sent emails at 13:12
+INFO:root:Checked and sent emails at 13:13
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 13:15
+INFO:root:Checked and sent emails at 13:16
+INFO:root:Checked and sent emails at 13:18
+INFO:root:Checked and sent emails at 13:19
+INFO:root:Checked and sent emails at 13:20
+INFO:root:Checked and sent emails at 13:21
+INFO:root:Checked and sent emails at 13:22
+INFO:root:Checked and sent emails at 13:23
+INFO:root:Checked and sent emails at 13:24
+INFO:root:Checked and sent emails at 13:25
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 13:28
+INFO:root:Checked and sent emails at 13:29
+INFO:root:Checked and sent emails at 13:31
+INFO:root:Checked and sent emails at 13:32
+INFO:root:Checked and sent emails at 13:33
+INFO:root:Checked and sent emails at 13:34
+INFO:root:Checked and sent emails at 13:35
+INFO:root:Checked and sent emails at 13:36
+INFO:root:Checked and sent emails at 13:37
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 14:26
+INFO:root:Checked and sent emails at 14:27
+INFO:root:Checked and sent emails at 14:28
+INFO:root:Checked and sent emails at 14:29
+INFO:root:Checked and sent emails at 14:30
+INFO:root:Checked and sent emails at 14:31
+INFO:root:Checked and sent emails at 14:32
+INFO:root:Checked and sent emails at 14:33
+INFO:root:Checked and sent emails at 14:34
+INFO:root:Checked and sent emails at 14:36
+INFO:root:Checked and sent emails at 23:56
+INFO:root:Checked and sent emails at 23:57
+INFO:root:Email sent successfully to atchukolus@gmail.com
+INFO:root:Checked and sent emails at 23:58
+INFO:root:Checked and sent emails at 23:59
+INFO:root:Checked and sent emails at 00:00
+INFO:root:Checked and sent emails at 00:01
+INFO:root:Checked and sent emails at 00:02
+INFO:root:Checked and sent emails at 00:04
+INFO:root:Checked and sent emails at 00:05
+INFO:root:Checked and sent emails at 00:06
+INFO:root:Checked and sent emails at 00:07
+INFO:root:Checked and sent emails at 00:08
+INFO:root:Checked and sent emails at 00:09
+INFO:root:Checked and sent emails at 00:10
+INFO:root:Checked and sent emails at 00:11
+INFO:root:Checked and sent emails at 00:12
+INFO:root:Checked and sent emails at 00:13
+INFO:root:Checked and sent emails at 00:14
+INFO:root:Checked and sent emails at 00:15
+INFO:root:Checked and sent emails at 00:16
+INFO:root:Checked and sent emails at 00:17
+INFO:root:Checked and sent emails at 00:18
+INFO:root:Checked and sent emails at 00:19
+INFO:root:Checked and sent emails at 18:09
+INFO:root:Checked and sent emails at 18:10
+INFO:root:Checked and sent emails at 18:11
+INFO:root:Checked and sent emails at 18:12
+INFO:root:Checked and sent emails at 18:13
+INFO:root:Checked and sent emails at 18:14
+INFO:root:Checked and sent emails at 18:15
+INFO:root:Checked and sent emails at 18:16
+INFO:root:Checked and sent emails at 18:17
+INFO:root:Checked and sent emails at 18:18
+INFO:root:Checked and sent emails at 18:19
+INFO:root:Checked and sent emails at 18:20
+INFO:root:Checked and sent emails at 18:21
+INFO:root:Checked and sent emails at 18:22
+INFO:root:Checked and sent emails at 18:23
+INFO:root:Checked and sent emails at 18:24
+INFO:root:Checked and sent emails at 18:25
+INFO:root:Checked and sent emails at 18:26
+INFO:root:Checked and sent emails at 18:27
+INFO:root:Checked and sent emails at 18:28
+INFO:root:Checked and sent emails at 18:29
+INFO:root:Checked and sent emails at 18:30
+INFO:root:Checked and sent emails at 18:31
+INFO:root:Checked and sent emails at 18:32
+INFO:root:Checked and sent emails at 18:33
+INFO:root:Checked and sent emails at 18:34
+INFO:root:Checked and sent emails at 18:35
+INFO:root:Checked and sent emails at 18:36
+INFO:root:Checked and sent emails at 18:37
+INFO:root:Checked and sent emails at 18:38
+INFO:root:Checked and sent emails at 18:39
+INFO:root:Checked and sent emails at 18:40
+INFO:root:Checked and sent emails at 18:41
+INFO:root:Checked and sent emails at 18:42
+INFO:root:Checked and sent emails at 18:43
+INFO:root:Checked and sent emails at 18:44
+INFO:root:Checked and sent emails at 18:46
+INFO:root:Checked and sent emails at 18:47
+INFO:root:Checked and sent emails at 18:48
+INFO:root:Checked and sent emails at 18:49
+INFO:root:Checked and sent emails at 18:50
+INFO:root:Checked and sent emails at 18:51
+INFO:root:Checked and sent emails at 18:52
+INFO:root:Checked and sent emails at 18:53
+INFO:root:Checked and sent emails at 18:54
+INFO:root:Checked and sent emails at 18:55
+INFO:root:Checked and sent emails at 18:56
+INFO:root:Checked and sent emails at 18:57
+INFO:root:Checked and sent emails at 18:58
+INFO:root:Checked and sent emails at 18:59
+INFO:root:Checked and sent emails at 19:00
+INFO:root:Checked and sent emails at 19:01
+INFO:root:Checked and sent emails at 19:02
+INFO:root:Checked and sent emails at 19:03
+INFO:root:Checked and sent emails at 19:04
+INFO:root:Checked and sent emails at 19:05
+INFO:root:Checked and sent emails at 19:06
+INFO:root:Checked and sent emails at 19:07
+INFO:root:Checked and sent emails at 19:08
+INFO:root:Checked and sent emails at 19:09
+INFO:root:Checked and sent emails at 19:10
+INFO:root:Checked and sent emails at 19:11
+INFO:root:Checked and sent emails at 19:12
+INFO:root:Checked and sent emails at 19:13
+INFO:root:Checked and sent emails at 19:14
+INFO:root:Checked and sent emails at 19:15
+INFO:root:Checked and sent emails at 19:16
+INFO:root:Checked and sent emails at 19:17
+INFO:root:Checked and sent emails at 19:18
+INFO:root:Checked and sent emails at 19:20
+INFO:root:Checked and sent emails at 19:21
+INFO:root:Checked and sent emails at 19:22
+INFO:root:Checked and sent emails at 19:23
+INFO:root:Checked and sent emails at 19:24
+INFO:root:Checked and sent emails at 19:25
+INFO:root:Checked and sent emails at 19:26
+INFO:root:Checked and sent emails at 19:27
+INFO:root:Checked and sent emails at 19:28
+INFO:root:Checked and sent emails at 19:29
+INFO:root:Checked and sent emails at 19:30
+INFO:root:Checked and sent emails at 19:31
+INFO:root:Checked and sent emails at 19:32
+INFO:root:Checked and sent emails at 19:33
+INFO:root:Checked and sent emails at 19:34
+INFO:root:Checked and sent emails at 19:35
+INFO:root:Checked and sent emails at 19:36
+INFO:root:Checked and sent emails at 19:37
+INFO:root:Checked and sent emails at 19:38
+INFO:root:Checked and sent emails at 19:39
+INFO:root:Checked and sent emails at 19:40
+INFO:root:Checked and sent emails at 19:41
+INFO:root:Checked and sent emails at 19:42
+INFO:root:Checked and sent emails at 19:43
+INFO:root:Checked and sent emails at 19:44
+INFO:root:Checked and sent emails at 20:06
+INFO:root:Checked and sent emails at 20:07
+INFO:root:Checked and sent emails at 20:08
+INFO:root:Checked and sent emails at 20:09
+INFO:root:Checked and sent emails at 20:10
+INFO:root:Checked and sent emails at 20:11
+INFO:root:Checked and sent emails at 20:12
+INFO:root:Checked and sent emails at 20:13
+INFO:root:Checked and sent emails at 20:14
+INFO:root:Checked and sent emails at 20:15
+INFO:root:Checked and sent emails at 20:17
+INFO:root:Checked and sent emails at 20:18
+INFO:root:Checked and sent emails at 20:19
+INFO:root:Checked and sent emails at 20:20
+INFO:root:Checked and sent emails at 20:21
+INFO:root:Checked and sent emails at 20:22
+INFO:root:Checked and sent emails at 20:23
+INFO:root:Checked and sent emails at 20:24
+INFO:root:Checked and sent emails at 20:25
+INFO:root:Checked and sent emails at 20:26
+INFO:root:Checked and sent emails at 20:27
+INFO:root:Checked and sent emails at 20:28
+INFO:root:Checked and sent emails at 20:29
+INFO:root:Checked and sent emails at 20:30
+INFO:root:Checked and sent emails at 20:31
+INFO:root:Checked and sent emails at 20:32
+INFO:root:Checked and sent emails at 20:33
+INFO:root:Checked and sent emails at 20:34
+INFO:root:Checked and sent emails at 20:35
+INFO:root:Checked and sent emails at 20:36
+INFO:root:Checked and sent emails at 20:37
+INFO:root:Checked and sent emails at 20:39
+INFO:root:Checked and sent emails at 20:40
+INFO:root:Checked and sent emails at 20:41
+INFO:root:Checked and sent emails at 20:42
+INFO:root:Checked and sent emails at 20:43
+INFO:root:Checked and sent emails at 20:44
+INFO:root:Checked and sent emails at 20:45
+INFO:root:Checked and sent emails at 20:46
+INFO:root:Checked and sent emails at 20:47
+INFO:root:Checked and sent emails at 20:48
+INFO:root:Checked and sent emails at 20:49
+INFO:root:Email sent successfully to atchukolus@gmail.com
+INFO:root:Checked and sent emails at 20:50
+INFO:root:Checked and sent emails at 20:51
+INFO:root:Checked and sent emails at 20:52
+INFO:root:Checked and sent emails at 20:53
+INFO:root:Checked and sent emails at 20:54
+INFO:root:Checked and sent emails at 20:55
+INFO:root:Checked and sent emails at 20:56
+INFO:root:Checked and sent emails at 20:58
+INFO:root:Checked and sent emails at 20:59
+INFO:root:Email sent successfully to rizwanasyed592@gmail.com
+INFO:root:Checked and sent emails at 21:00
+INFO:root:Checked and sent emails at 21:01
+INFO:root:Checked and sent emails at 21:02
+INFO:root:Checked and sent emails at 21:03
+INFO:root:Checked and sent emails at 21:04
+INFO:root:Checked and sent emails at 21:05
+INFO:root:Checked and sent emails at 21:06
+INFO:root:Checked and sent emails at 21:07
+INFO:root:Checked and sent emails at 21:08
+INFO:root:Checked and sent emails at 21:09
+INFO:root:Checked and sent emails at 21:10
+INFO:root:Checked and sent emails at 21:11
+INFO:root:Checked and sent emails at 21:12
+INFO:root:Checked and sent emails at 21:13
+INFO:root:Checked and sent emails at 21:14
+INFO:root:Checked and sent emails at 21:15
+INFO:root:Checked and sent emails at 21:17
+INFO:root:Checked and sent emails at 21:18
+INFO:root:Checked and sent emails at 21:19
+INFO:root:Checked and sent emails at 21:20
+INFO:root:Checked and sent emails at 21:21
+INFO:root:Checked and sent emails at 21:22
+INFO:root:Checked and sent emails at 21:23
+INFO:root:Checked and sent emails at 21:24
+INFO:root:Checked and sent emails at 21:25
+INFO:root:Email sent successfully to namepallipavani@gmail.com
+INFO:root:Checked and sent emails at 21:26
+INFO:root:Checked and sent emails at 21:27
+INFO:root:Checked and sent emails at 21:28
+INFO:root:Checked and sent emails at 21:29
+INFO:root:Checked and sent emails at 21:30
+INFO:root:Checked and sent emails at 21:31
+INFO:root:Checked and sent emails at 21:32
+INFO:root:Checked and sent emails at 21:33
+INFO:root:Checked and sent emails at 21:34
+INFO:root:Checked and sent emails at 21:35
+INFO:root:Checked and sent emails at 21:36
+INFO:root:Checked and sent emails at 21:38
+INFO:root:Checked and sent emails at 21:39
+INFO:root:Checked and sent emails at 21:40
+INFO:root:Checked and sent emails at 21:41
+INFO:root:Checked and sent emails at 21:42
+INFO:root:Email sent successfully to namepallipavani@gmail.com
+INFO:root:Email sent successfully to namepallipavani@gmail.com
+INFO:root:Checked and sent emails at 21:43
+INFO:root:Checked and sent emails at 21:44
+INFO:root:Checked and sent emails at 21:45
+INFO:root:Checked and sent emails at 21:46
+INFO:root:Checked and sent emails at 21:47
+INFO:root:Shutting down gracefully...
+INFO:root:Checked and sent emails at 09:55
+INFO:root:Checked and sent emails at 09:56
+INFO:root:Checked and sent emails at 09:57
+INFO:root:Checked and sent emails at 09:58
+INFO:root:Checked and sent emails at 09:59
+INFO:root:Checked and sent emails at 10:00
+INFO:root:Checked and sent emails at 10:01
+INFO:root:Checked and sent emails at 10:02
+INFO:root:Checked and sent emails at 10:03
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10054] An existing connection was forcibly closed by the remote host)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 10:26
+INFO:root:Checked and sent emails at 10:27
+INFO:root:Checked and sent emails at 10:28
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Shutting down gracefully...
+INFO:root:Checked and sent emails at 10:19
+INFO:root:Checked and sent emails at 10:21
+INFO:root:Checked and sent emails at 10:22
+INFO:root:Checked and sent emails at 10:23
+INFO:root:Checked and sent emails at 10:24
+INFO:root:Shutting down gracefully...
+INFO:root:Email sent successfully to tanujakunchala25@gmail.com
+INFO:root:Checked and sent emails at 10:25
+INFO:root:Checked and sent emails at 10:27
+INFO:root:Checked and sent emails at 10:30
+INFO:root:Checked and sent emails at 10:31
+INFO:root:Checked and sent emails at 10:33
+INFO:root:Checked and sent emails at 10:34
+INFO:root:Checked and sent emails at 10:35
+INFO:root:Checked and sent emails at 10:36
+INFO:root:Checked and sent emails at 10:37
+INFO:root:Checked and sent emails at 10:38
+INFO:root:Checked and sent emails at 10:39
+INFO:root:Email sent successfully to tanujakunchala25@gmail.com
+INFO:root:Checked and sent emails at 10:40
+INFO:root:Checked and sent emails at 10:41
+INFO:root:Checked and sent emails at 10:42
+INFO:root:Checked and sent emails at 10:43
+INFO:root:Checked and sent emails at 10:45
+INFO:root:Checked and sent emails at 10:46
+INFO:root:Checked and sent emails at 10:47
+INFO:root:Checked and sent emails at 10:48
+INFO:root:Checked and sent emails at 10:49
+INFO:root:Checked and sent emails at 10:50
+INFO:root:Checked and sent emails at 10:51
+INFO:root:Checked and sent emails at 10:52
+INFO:root:Checked and sent emails at 10:53
+INFO:root:Checked and sent emails at 10:54
+INFO:root:Checked and sent emails at 10:55
+INFO:root:Checked and sent emails at 10:56
+INFO:root:Checked and sent emails at 10:57
+INFO:root:Checked and sent emails at 10:58
+INFO:root:Email sent successfully to srujanapeddi84@gmail.com
+INFO:root:Checked and sent emails at 10:59
+INFO:root:Checked and sent emails at 11:01
+INFO:root:Checked and sent emails at 11:02
+INFO:root:Checked and sent emails at 11:03
+INFO:root:Checked and sent emails at 11:04
+INFO:root:Checked and sent emails at 11:05
+INFO:root:Checked and sent emails at 11:06
+INFO:root:Checked and sent emails at 11:07
+INFO:root:Checked and sent emails at 11:08
+INFO:root:Checked and sent emails at 11:09
+INFO:root:Checked and sent emails at 11:10
+INFO:root:Checked and sent emails at 11:11
+INFO:root:Checked and sent emails at 11:12
+INFO:root:Checked and sent emails at 11:13
+INFO:root:Checked and sent emails at 11:14
+INFO:root:Checked and sent emails at 11:15
+INFO:root:Checked and sent emails at 11:16
+INFO:root:Checked and sent emails at 11:18
+INFO:root:Checked and sent emails at 11:19
+INFO:root:Checked and sent emails at 11:20
+INFO:root:Checked and sent emails at 11:21
+INFO:root:Checked and sent emails at 11:22
+INFO:root:Checked and sent emails at 11:23
+INFO:root:Checked and sent emails at 11:24
+ERROR:root:An error occurred: (pymysql.err.InternalError) Packet sequence number wrong - got 1 expected 2
+(Background on this error at: https://sqlalche.me/e/20/2j85)
+INFO:root:Checked and sent emails at 11:26
+INFO:root:Checked and sent emails at 11:28
+INFO:root:Checked and sent emails at 11:29
+INFO:root:Checked and sent emails at 11:32
+INFO:root:Checked and sent emails at 11:33
+INFO:root:Checked and sent emails at 11:34
+INFO:root:Checked and sent emails at 11:35
+INFO:root:Checked and sent emails at 17:17
+INFO:root:Checked and sent emails at 17:18
+INFO:root:Checked and sent emails at 17:19
+INFO:root:Checked and sent emails at 17:20
+INFO:root:Checked and sent emails at 17:21
+INFO:root:Checked and sent emails at 17:22
+INFO:root:Checked and sent emails at 17:23
+INFO:root:Checked and sent emails at 17:24
+INFO:root:Checked and sent emails at 17:25
+INFO:root:Checked and sent emails at 17:26
+INFO:root:Checked and sent emails at 17:27
+INFO:root:Checked and sent emails at 17:28
+INFO:root:Checked and sent emails at 17:29
+INFO:root:Checked and sent emails at 17:30
+INFO:root:Checked and sent emails at 17:31
+INFO:root:Checked and sent emails at 17:32
+INFO:root:Checked and sent emails at 17:33
+INFO:root:Checked and sent emails at 17:34
+INFO:root:Checked and sent emails at 17:35
+INFO:root:Checked and sent emails at 17:36
+INFO:root:Checked and sent emails at 17:36
+INFO:root:Email sent successfully to atchukolus@gmail.com
+INFO:root:Checked and sent emails at 17:37
+INFO:root:Email sent successfully to atchukolus@gmail.com
+INFO:root:Checked and sent emails at 17:37
+INFO:root:Checked and sent emails at 17:38
+INFO:root:Checked and sent emails at 17:39
+INFO:root:Checked and sent emails at 17:39
+INFO:root:Checked and sent emails at 17:40
+ERROR:root:An error occurred: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+ERROR:root:An error occurred: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+ERROR:root:An error occurred: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+ERROR:root:An error occurred: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+ERROR:root:An error occurred: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+ERROR:root:An error occurred: 'cryptography' package is required for sha256_password or caching_sha2_password auth methods
+INFO:root:Checked and sent emails at 09:31
+INFO:root:Checked and sent emails at 09:32
+INFO:root:Checked and sent emails at 09:33
+INFO:root:Checked and sent emails at 09:34
+INFO:root:Checked and sent emails at 09:35
+INFO:root:Checked and sent emails at 09:37
+INFO:root:Checked and sent emails at 09:38
+INFO:root:Checked and sent emails at 09:39
+INFO:root:Email sent successfully to srujanapeddi84@gmail.com
+INFO:root:Checked and sent emails at 09:40
+INFO:root:Checked and sent emails at 09:41
+INFO:root:Checked and sent emails at 09:42
+INFO:root:Checked and sent emails at 09:43
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 09:45
+INFO:root:Checked and sent emails at 09:47
+INFO:root:Checked and sent emails at 09:48
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2013, 'Lost connection to MySQL server during query ([WinError 10053] An established connection was aborted by the software in your host machine)')
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 09:54
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 09:58
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' (timed out)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+INFO:root:Checked and sent emails at 10:01
+INFO:root:Checked and sent emails at 10:02
+INFO:root:Checked and sent emails at 10:04
+INFO:root:Checked and sent emails at 10:05
+ERROR:root:An error occurred: (pymysql.err.InternalError) Packet sequence number wrong - got 1 expected 2
+(Background on this error at: https://sqlalche.me/e/20/2j85)
+INFO:root:Checked and sent emails at 11:11
+INFO:root:Checked and sent emails at 11:12
+INFO:root:Checked and sent emails at 11:13
+INFO:root:Checked and sent emails at 11:14
+INFO:root:Checked and sent emails at 11:15
+INFO:root:Checked and sent emails at 11:16
+INFO:root:Checked and sent emails at 11:17
+INFO:root:Checked and sent emails at 11:18
+INFO:root:Checked and sent emails at 11:19
+INFO:root:Checked and sent emails at 11:20
+ERROR:root:An error occurred: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'sql.freedb.tech' ([Errno 11001] getaddrinfo failed)")
+(Background on this error at: https://sqlalche.me/e/20/e3q8)

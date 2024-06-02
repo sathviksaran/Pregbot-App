@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregnancy Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            background-image: url(../static/images/carlo-navarro-WCbCRXk7nmU-unsplash.jpg);
+        }
+
+        .container {
+            width: 70%;
+            margin: 50px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        input[type="submit"] {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: block;
+            margin: 20px auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Daily Form</h2>
+        <form action="/submit" method="post">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+            <label>How have you been feeling overall during your pregnancy?</label><br>
+            <input type="radio" name="overall_feeling" value="Excellent" required><label>Excellent</label><br>
+            <input type="radio" name="overall_feeling" value="Good"><label>Good</label><br>
+            <input type="radio" name="overall_feeling" value="Fair"> <label>Fair</label><br>
+            <input type="radio" name="overall_feeling" value="Poor"> <label>Poor</label><br><br>
+            
+            <label>Are you experiencing any morning sickness or nausea?</label><br>
+            <input type="radio" name="morning_sickness" value="None" required><label>None</label><br>
+            <input type="radio" name="morning_sickness" value="Occasionally"><label>Occasionally</label><br>
+            <input type="radio" name="morning_sickness" value="Frequently"><label>Frequently</label><br>
+            <input type="radio" name="morning_sickness" value="Constantly"><label>Constantly</label><br><br>
+            
+            <!-- Add other input fields here -->
+            <label>Have you noticed any changes in your weight since the beginning of your pregnancy?</label><br>
+            <input type="radio" name="weight_changes" value="Gained weight" required><label>Gained weight</label><br>
+            <input type="radio" name="weight_changes" value="Maintained weight"><label>Maintained weight</label><br>
+            <input type="radio" name="weight_changes" value="Lost weight"><label>Lost weight</label><br>
+            <input type="radio" name="weight_changes" value="Not sure"><label>Not sure</label><br><br>
+            
+            <label>How is your appetite lately?</label><br>
+            <input type="radio" name="appetite" value="Increased" required><label>Increased</label><br>
+            <input type="radio" name="appetite" value="Normal"><label>Normal</label><br>
+            <input type="radio" name="appetite" value="Decreased"><label>Decreased</label><br>
+            <input type="radio" name="appetite" value="Varies"><label>Varies</label><br><br>
+            
+            <label>Are you experiencing any swelling in your hands, feet, or face?</label><br>
+            <input type="radio" name="swelling" value="No swelling" required><label>No swelling</label><br>
+            <input type="radio" name="swelling" value="Mild swelling"><label>Mild swelling</label><br>
+            <input type="radio" name="swelling" value="Moderate swelling"><label>Moderate swelling</label><br>
+            <input type="radio" name="swelling" value="Severe swelling"><label>Severe swelling</label><br><br>
+            
+            <label>Have you been experiencing any unusual fatigue or exhaustion?</label><br>
+            <input type="radio" name="fatigue" value="None" required><label>None</label><br>
+            <input type="radio" name="fatigue" value="Mild fatigue"><label>Mild fatigue</label><br>
+            <input type="radio" name="fatigue" value="Moderate fatigue"><label>Moderate fatigue</label><br>
+            <input type="radio" name="fatigue" value="Severe fatigue"><label>Severe fatigue</label><br><br>
+            
+            <label>How has your sleep been during pregnancy?</label><br>
+            <input type="radio" name="sleep_quality" value="Good" required><label>Good</label><br>
+            <input type="radio" name="sleep_quality" value="Average"><label>Average</label><br>
+            <input type="radio" name="sleep_quality" value="Poor"><label>Poor</label><br>
+            <input type="radio" name="sleep_quality" value="Very poor"><label>Very poor</label><br><br>
+            
+            <label>Are you staying hydrated? How much water are you drinking daily?</label><br>
+            <input type="radio" name="hydration" value="Well-hydrated" required><label>Well-hydrated</label><br>
+            <input type="radio" name="hydration" value="Moderately hydrated"><label>Moderately hydrated</label><br>
+            <input type="radio" name="hydration" value="Dehydrated"><label>Dehydrated</label><br>
+            <input type="radio" name="hydration" value="Unsure"><label>Unsure</label><br><br>
+            
+            <label>Have you noticed any changes in your mood or emotional well-being?</label><br>
+            <input type="radio" name="mood_changes" value="Stable mood" required><label>Stable mood</label><br>
+            <input type="radio" name="mood_changes" value="Occasional mood swings"><label>Occasional mood swings</label><br>
+            <input type="radio" name="mood_changes" value="Frequent mood swings"><label>Frequent mood swings</label><br>
+            <input type="radio" name="mood_changes" value="Emotional distress"><label>Emotional distress</label><br><br>
+            
+            <label>Are you attending regular prenatal check-ups, and how has your healthcare provider assessed your overall health?</label><br>
+            <input type="radio" name="prenatal_checkups" value="Regular check-ups and positive assessments" required><label>Regular check-ups and positive assessments</label><br>
+            <input type="radio" name="prenatal_checkups" value="Regular check-ups with minor concerns"><label>Regular check-ups with minor concerns</label><br>
+            <input type="radio" name="prenatal_checkups" value="Irregular check-ups"><label>Irregular check-ups</label><br>
+            <input type="radio" name="prenatal_checkups" value="Not seeking prenatal care"><label>Not seeking prenatal care</label><br><br>
+            
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementsToTranslate = [
+                'h2',
+                'label'
+            ];
+    
+            // Load the selected language preference from localStorage
+            const savedLanguage = localStorage.getItem('selectedLanguage');
+            if (savedLanguage) {
+                applyLanguageTranslation(savedLanguage);
+            }
+    
+            async function translateText(text, targetLanguage) {
+                try {
+                    const response = await fetch('/translate', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded'
+                        },
+                        body: `text=${encodeURIComponent(text)}&target_language=${targetLanguage}`
+                    });
+    
+                    if (response.ok) {
+                        const jsonResponse = await response.json();
+                        return jsonResponse.translated_text;
+                    } else {
+                        console.error('Failed to get a valid response from the translation endpoint.');
+                        return text;
+                    }
+                } catch (error) {
+                    console.error('Error during translation fetch:', error);
+                    return text;
+                }
+            }
+    
+            async function applyLanguageTranslation(selectedLanguage) {
+                for (const elementSelector of elementsToTranslate) {
+                    const elements = document.querySelectorAll(elementSelector);
+                    elements.forEach(async (element) => {
+                        if (element.tagName === 'LABEL') {
+                            const originalText = element.innerText;
+                            const translatedText = await translateText(originalText, selectedLanguage);
+                            element.innerText = translatedText;
+                        } else if (element.tagName === 'INPUT' && element.type === 'radio') {
+                            const label = document.querySelector(`label[for="${element.id}"]`);
+                            const originalText = label.innerText;
+                            const translatedText = await translateText(originalText, selectedLanguage);
+                            label.innerText = translatedText;
+                        } else {
+                            const originalText = element.innerText;
+                            const translatedText = await translateText(originalText, selectedLanguage);
+                            element.innerText = translatedText;
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+    
+    
+</body>
+</html>

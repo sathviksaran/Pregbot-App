@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Prenatal Support System - Health Profile</title>
+  <style>
+    .container {
+      width: 500px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      position: relative;
+      top: -6vh;
+    }
+    h2 {
+      text-align: center;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="submit"],
+    input[type="number"],
+    textarea {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #4c59af;
+      color: white;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #4548a0;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      background: url(../static/images/carlo-navarro-WCbCRXk7nmU-unsplash.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      color: white;
+      padding: 20px;
+      position:fixed;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #333;
+      padding: 15px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+    }
+
+    nav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    footer {
+      color: rgb(11, 11, 11);
+      text-align: center;
+      padding: 8px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+  
+
+    b {
+      background-color: #f2f2f2;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    .user-profile {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0.5vw;
+      right: -35px;
+    }
+
+    .user-profile img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 5px;
+      position: relative;
+      top: 1vh;
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      right: 18vh;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 180px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+    section{
+      padding:20px;
+      text-align:justify;
+    }
+  </style>
+</head>
+<body>
+    <div class="user-profile">
+        <div class="dropdown">
+          <img src="https://i.pinimg.com/564x/de/6e/8d/de6e8d53598eecfb6a2d86919b267791.jpg" alt="User Profile"> 
+          <font color="#fff">{{user.username }}</font>
+          <div class="dropdown-content">
+            <a href="healthprofile" class="dc">My Health Profile</a>
+            <a href="dailyroutine" class="dc">My Daily Routine</a>
+            <a href="find" class="dc">Find Hospitals</a>
+            <a href="logout" class="dc">Logout</a>
+          </div>
+        </div>
+      </div>
+    <header>
+      <h3>Prenatal Support System</h3>
+      <h5>Empowering Women and Families</h5>
+      </header>
+      <nav>
+        <a href="/">Home</a>
+        <a href="about">About</a>
+        <a href="services">Services</a>
+        <a href="resources">Resources</a>
+        <a href="contact">Contact</a>
+      </nav>
+  <div class="container">
+    <form action="/healthprofile" method="post" id="healthForm">
+      <h2>Hi {{user.username}}! Enter your health details</h2>
+      <input type="text" name="fullname" placeholder="Full Name" id="name" value="{{ user.fullname }}">
+      <input type="email" name="email" placeholder="Email" value="{{ user.email }}">
+      <input type="tel" name="mobile" placeholder="Mobile Number" value="{{ user.mobile }}" required>
+      <input type="text" name="place" placeholder="Place" value="{{profile.place}}" required>
+      <input type="number" name="age" placeholder="Age" value="{{profile.age}}" required>
+      <input type="number" name="height" placeholder="Height(in cms)" value="{{profile.height}}" required>
+      <input type="number" name="weight" placeholder="Weight(in kgs)" value="{{profile.weight}}"required>
+      <input type="number" name="month" placeholder="Pregnancy month" value="{{profile.month}}"required>
+      <br>
+      <input type="checkbox" name="diabetes" value="1" {% if profile.diabetes %}checked{% endif %}><span>Diabetes</span>
+       <input type="checkbox" name="Blood pressure" value="1" {% if profile.blood_pressure %}checked{% endif %}><span>Blood Pressure</span>
+      <input type="text" name="disesase" placeholder="Other disease" value="{{profile.other_disease}}">
+      <span>Do you want to get notified regarding your diet and care?</span>
+       <input type="radio" value="Yes" name="notify" required {% if profile.notify %}checked{% endif %}><span>Yes</span>
+       <input type="radio" value="No" name="notify" {% if profile.notify != "Yes" %}checked{% endif %}><span>No</span>
+      <br><br>
+      <textarea name="address" placeholder="Address" rows="10" cols="6" required>{{profile.address}}</textarea>
+      <input type="submit" value="Save">
+    </form>
+  </div>
+  <footer>
+    <p>&copy; 2024 Pregnancy Support System</p>
+  </footer>
+<!-- ... (Your existing HTML code) -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('healthForm');
+    const formElements = form.elements;
+
+    // Load the selected language preference from localStorage
+    const savedLanguage = localStorage.getItem('selectedLanguage');
+    if (savedLanguage) {
+      applyLanguageTranslation(savedLanguage);
+    }
+
+    // Add event listener to language select dropdown
+    languageSelect.addEventListener('change', () => {
+      const selectedLanguage = languageSelect.value;
+      applyLanguageTranslation(selectedLanguage);
+      // Save the selected language preference to localStorage
+      localStorage.setItem('selectedLanguage', selectedLanguage);
+    });
+
+    async function translateText(text, targetLanguage) {
+        try {
+          const response = await fetch('/translate', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: new URLSearchParams({
+              text: text,
+              target_language: targetLanguage,
+            }),
+          });
+
+          if (response.ok) {
+            const data = await response.json();
+            return data.translated_text;
+          } else {
+            console.error('Failed to translate text:', response.statusText);
+            return text; // Return original text if translation fails
+          }
+        } catch (error) {
+          console.error('Error translating text:', error);
+          return text; // Return original text if translation fails
+        }
+      }
+
+    async function applyLanguageTranslation(selectedLanguage) {
+      // Translate the header elements
+      const h3Element = document.querySelector('header h3');
+      const h5Element = document.querySelector('header h5');
+      if (h3Element && h5Element) {
+        const originalH3Text = h3Element.innerText;
+        const translatedH3Text = await translateText(originalH3Text, selectedLanguage);
+        h3Element.innerText = translatedH3Text;
+
+        const originalH5Text = h5Element.innerText;
+        const translatedH5Text = await translateText(originalH5Text, selectedLanguage);
+        h5Element.innerText = translatedH5Text;
+      }
+      const dropdownElements = document.querySelectorAll('.dc');
+      dropdownElements.forEach(async (span) => {
+        const originalText = span.innerText;
+        const translatedText = await translateText(originalText, selectedLanguage);
+        span.innerText = translatedText;
+      });
+
+      // Translate the h2 element text
+      const h2Element = document.querySelector('.container h2');
+      if (h2Element) {
+        const originalText = h2Element.innerText;
+        const translatedText = await translateText(originalText, selectedLanguage);
+        h2Element.innerText = translatedText;
+      }
+
+      // Translate the span elements associated with checkboxes, radio buttons, and custom message
+      const spanElements = document.querySelectorAll('.container span');
+      spanElements.forEach(async (span) => {
+        const originalText = span.innerText;
+        const translatedText = await translateText(originalText, selectedLanguage);
+        span.innerText = translatedText;
+      });
+      const anchorElements = document.querySelectorAll('nav a');
+      anchorElements.forEach(async (span) => {
+        const originalText = span.innerText;
+        const translatedText = await translateText(originalText, selectedLanguage);
+        span.innerText = translatedText;
+      });
+      
+
+      // Loop through form elements and update labels, placeholders, and values
+      for (let i = 1; i < formElements.length; i++) {
+        const element = formElements[i];
+
+        // If the element is an input, textarea, or select, translate the user-entered text
+        if ((element.tagName.toLowerCase() === 'input' || element.tagName.toLowerCase() === 'textarea' || element.tagName.toLowerCase() === 'select') && element.value) {
+          const originalText = element.value;
+          const translatedText = await translateText(originalText, selectedLanguage);
+          element.value = translatedText;
+        }
+
+        // Update the label, placeholder based on the element type
+        if (element.tagName.toLowerCase() === 'label') {
+          const translationKey = element.getAttribute('for');
+          const originalText = element.innerText;
+          const translatedText = await translateText(originalText, selectedLanguage);
+          element.innerText = translatedText;
+
+          // If the associated input has an ID, update its placeholder
+          const associatedInput = document.getElementById(translationKey);
+          if (associatedInput && associatedInput.placeholder) {
+            const originalPlaceholder = associatedInput.placeholder;
+            const translatedPlaceholder = await translateText(originalPlaceholder, selectedLanguage);
+            associatedInput.placeholder = translatedPlaceholder;
+          }
+        } else if (element.placeholder) {
+          const originalText = element.placeholder;
+          const translatedText = await translateText(originalText, selectedLanguage);
+          element.placeholder = translatedText;
+        }
+      }
+    }
+  });
+</script>
