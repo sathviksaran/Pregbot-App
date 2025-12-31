@@ -28,6 +28,7 @@ model = load_model('chatbotmodel.h5')
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-fallback-key")
 
 # Configure Flask-Mail
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
@@ -50,7 +51,7 @@ def send_msg(to_phone_number, message):
             to=to_phone_number
         )
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://freedb_pregbot:#Da!C*5t39JWnUv@sql.freedb.tech:3306/freedb_Pregbot'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://freedb_pregbot:%24T%25CF4ymD%3F5YYAa@sql.freedb.tech:3306/freedb_pregbotdb'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -518,7 +519,6 @@ def get_response(intents_list, intents_json):
     return result
 
 if __name__ == "__main__":
-    app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-fallback-key")
   # Replace with your actual secret key
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0",debug=False,port=port)
