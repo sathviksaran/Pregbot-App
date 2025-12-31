@@ -433,7 +433,7 @@ def signup():
             db.session.add(new_user)
             db.session.commit()
             subject='NEW USER REGISTERED IN PREGBOT'
-            recipient='mypregbot@gmail.com'  # Admin's email
+            recipient='pregbotapp@gmail.com'  # Admin's email
             body = f"Name: {new_user.username}\nEmail: {new_user.email}\nMobile No: {new_user.mobile}"
             send_email(recipient,subject,body)
             subject1='PREGBOT USER REGISTRATION SUCCESSFUL'
