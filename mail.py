@@ -9,6 +9,8 @@ from datetime import datetime
 import time
 from googletrans import Translator
 import schedule  # Import schedule library
+import os
+import requests
 
 app = Flask(__name__)
 
