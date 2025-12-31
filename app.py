@@ -17,7 +17,13 @@ from deep_translator import GoogleTranslator
 from functools import lru_cache
 from nltk.corpus import wordnet
 import signal
+class TimeoutException(Exception):
+    pass
 
+def timeout_handler(signum, frame):
+    raise TimeoutException()
+
+signal.signal(signal.SIGALRM, timeout_handler)
 
 # Writable directory on Render
 NLTK_DATA_DIR = os.path.join(os.getcwd(), "nltk_data")
