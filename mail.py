@@ -1,10 +1,10 @@
 import logging
 import signal
 import sys
-from flask_mail import Message
+# from flask_mail import Message
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from flask_mail import Mail
+# from flask_mail import Mail
 from datetime import datetime
 import time
 from googletrans import Translator
@@ -13,14 +13,14 @@ import schedule  # Import schedule library
 app = Flask(__name__)
 
 # Configure Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587  # Use the appropriate port
-app.config['MAIL_USE_TLS'] = True  # Or MAIL_USE_SSL=True for SSL
-app.config['MAIL_USERNAME'] = 'mypregbot@gmail.com'
-app.config['MAIL_PASSWORD'] = 'ijaefbyibmwtmobf'
-app.config['MAIL_DEFAULT_SENDER'] = 'mypregbot@gmail.com'
+# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+# app.config['MAIL_PORT'] = 587  # Use the appropriate port
+# app.config['MAIL_USE_TLS'] = True  # Or MAIL_USE_SSL=True for SSL
+# app.config['MAIL_USERNAME'] = 'mypregbot@gmail.com'
+# app.config['MAIL_PASSWORD'] = 'ijaefbyibmwtmobf'
+# app.config['MAIL_DEFAULT_SENDER'] = 'mypregbot@gmail.com'
 
-mail = Mail(app)
+# mail = Mail(app)
 
 # Configure SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://freedb_pregbot:#Da!C*5t39JWnUv@sql.freedb.tech:3306/freedb_Pregbot'
@@ -46,9 +46,27 @@ class User(db.Model):
     mobile = db.Column(db.String(15), nullable=False)
     password_hash = db.Column(db.String(128), nullable=False)
 
-def send_email(recipient, subject, body):
-    msg = Message(subject=subject, body=body, recipients=[recipient])
-    mail.send(msg)
+def send_email(to_email, subject, html_content):
+    url = "https://api.brevo.com/v3/smtp/email"
+
+    headers = {
+        "accept": "application/json",
+        "api-key": BREVO_API_KEY,
+        "content-type": "application/json",
+    }
+
+    payload = {
+        "sender": {
+            "name": SENDER_NAME,
+            "email": SENDER_EMAIL
+        },
+        "to": [{"email": to_email}],
+        "subject": subject,
+        "htmlContent": html_content
+    }
+
+    response = requests.post(url, json=payload, headers=headers)
+    response.raise_for_status()
 
 def translate_message(message, target_language):
     translator = Translator()
