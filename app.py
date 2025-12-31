@@ -48,6 +48,9 @@ with open('bot.json') as json_file:
     intents = json.load(json_file)
 
 words = pickle.load(open('words.pkl', 'rb'))
+# Fast lookup instead of nested loops
+word_index = {w: i for i, w in enumerate(words)}
+
 classes = pickle.load(open('classes.pkl', 'rb'))
 model = load_model('chatbotmodel.h5')
 
@@ -353,7 +356,11 @@ def chat():
 
         if message.lower() == 'quit':
             return jsonify({'response': 'Goodbye!'}), 200
-
+        
+        if len(message) > 120:
+            return jsonify({
+                "response": "Please ask a shorter question 🙂"
+            }), 200
         ints = cached_predict(message)
         resp = get_response(ints, intents)
 
@@ -572,30 +579,45 @@ def logout():
     return redirect(url_for('login'))
 
 def clean_up_sentence(sentence):
-    sentence_words = nltk.word_tokenize(sentence)
+    # Hard limit (prevents TF hang)
+    sentence = sentence[:200]
+
+    sentence_words = nltk.word_tokenize(sentence.lower())
     sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
     return sentence_words
 
+
 def bag_of_words(sentence):
     sentence_words = clean_up_sentence(sentence)
-    bag = [0] * len(words)
+    bag = np.zeros(len(words), dtype=np.float32)
+
     for w in sentence_words:
-        for i, word in enumerate(words):
-            if word == w:
-                bag[i] = 1
-    return np.array(bag)
+        idx = word_index.get(w)
+        if idx is not None:
+            bag[idx] = 1.0
+
+    return bag
 
 def predict_class(sentence):
     bow = bag_of_words(sentence)
-    res = model.predict(np.array([bow]))[0]
+
+    # Batch shape: (1, n)
+    res = model.predict(
+        np.expand_dims(bow, axis=0),
+        verbose=0
+    )[0]
+
     ERROR_THRESHOLD = 0.25
-    results = [[i, r] for i, r in enumerate(res) if r > ERROR_THRESHOLD]
+    results = [
+        (i, r) for i, r in enumerate(res) if r > ERROR_THRESHOLD
+    ]
 
     results.sort(key=lambda x: x[1], reverse=True)
-    return_list = []
-    for r in results:
-        return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
-    return return_list
+
+    return [
+        {"intent": classes[i], "probability": float(r)}
+        for i, r in results
+    ]
 
 @lru_cache(maxsize=500)
 def cached_predict(sentence):
