@@ -51,7 +51,7 @@ def send_msg(to_phone_number, message):
             to=to_phone_number
         )
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:LiWTXGZPopMlSrUIEldyHGUeRUlmeeqD@mysql.railway.internal:3306/railway'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:LiWTXGZPopMlSrUIEldyHGUeRUlmeeqD@yamabiko.proxy.rlwy.net:34102/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
