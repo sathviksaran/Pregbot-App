@@ -15,9 +15,19 @@ import os
 import requests
 from datetime import datetime, timezone, timedelta
 
-nltk.download('wordnet')
-nltk.download('punkt')
-nltk.download('omw-1.4')
+
+# Writable directory on Render
+NLTK_DATA_DIR = os.path.join(os.getcwd(), "nltk_data")
+os.makedirs(NLTK_DATA_DIR, exist_ok=True)
+
+# Tell NLTK where to look
+nltk.data.path.append(NLTK_DATA_DIR)
+
+# Download required resources
+nltk.download("punkt", download_dir=NLTK_DATA_DIR)
+nltk.download("punkt_tab", download_dir=NLTK_DATA_DIR)
+nltk.download("wordnet", download_dir=NLTK_DATA_DIR)
+nltk.download("omw-1.4", download_dir=NLTK_DATA_DIR)
 
 lemmatizer = WordNetLemmatizer()
 with open('bot.json') as json_file:
