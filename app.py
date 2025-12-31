@@ -13,7 +13,7 @@ from googletrans import Translator
 from twilio.rest import Client
 import os
 import requests
-
+from datetime import datetime, timezone, timedelta
 
 nltk.download('wordnet')
 nltk.download('punkt')
@@ -27,6 +27,8 @@ words = pickle.load(open('words.pkl', 'rb'))
 classes = pickle.load(open('classes.pkl', 'rb'))
 model = load_model('chatbotmodel.h5')
 
+LAUNCH_TIME = datetime(2026, 1, 1, 0, 0, 0, tzinfo=timezone(timedelta(hours=5, minutes=30)))  # IST
+
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
@@ -35,6 +37,7 @@ app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
     SESSION_COOKIE_SAMESITE="Lax",
 )
+
 
 
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
@@ -138,6 +141,17 @@ class PregnancyFormData(db.Model):
     hydration = db.Column(db.String(20))
     mood_changes = db.Column(db.String(20))
     prenatal_checkups = db.Column(db.String(20))
+
+@app.before_request
+def check_launch_time():
+    now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+
+    if now < LAUNCH_TIME:
+        # Allow admin / health routes if needed
+        if request.path.startswith("/health"):
+            return None
+        return render_template("coming_soon.html"), 503
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     # Check if the user is not logged in
