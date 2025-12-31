@@ -516,6 +516,6 @@ def get_response(intents_list, intents_json):
             break
     return result
 
-# if __name__ == "__main__":
-#     app.config['SECRET_KEY'] = 'hello'  # Replace with your actual secret key
-#     app.run(debug=False)
+if __name__ == "__main__":
+    app.config['SECRET_KEY'] = 'hello'  # Replace with your actual secret key
+    app.run(debug=False,port=8888)
