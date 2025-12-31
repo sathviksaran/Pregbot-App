@@ -31,6 +31,11 @@ model = load_model('chatbotmodel.h5')
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-fallback-key")
 
+
+BREVO_API_KEY = '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'
+SENDER_EMAIL = 'pregbotapp@gmail.com'
+SENDER_NAME = 'PREGBOT'
+
 # Configure Flask-Mail
 # app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 # app.config['MAIL_PORT'] = 587  # Use the appropriate port
