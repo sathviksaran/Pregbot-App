@@ -9,9 +9,10 @@ from tensorflow.keras.models import load_model # type: ignore
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 from googletrans import Translator
-from flask_mail import Message,Mail
+# from flask_mail import Message,Mail
 from twilio.rest import Client
 import os
+import requests
 
 
 nltk.download('wordnet')
@@ -31,14 +32,14 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-fallback-key")
 
 # Configure Flask-Mail
-app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-app.config['MAIL_PORT'] = 587  # Use the appropriate port
-app.config['MAIL_USE_TLS'] = True  # Or MAIL_USE_SSL=True for SSL
-app.config['MAIL_USERNAME'] = 'mypregbot@gmail.com'
-app.config['MAIL_PASSWORD'] = 'ijaefbyibmwtmobf'
-app.config['MAIL_DEFAULT_SENDER'] = 'mypregbot@gmail.com'
+# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+# app.config['MAIL_PORT'] = 587  # Use the appropriate port
+# app.config['MAIL_USE_TLS'] = True  # Or MAIL_USE_SSL=True for SSL
+# app.config['MAIL_USERNAME'] = 'mypregbot@gmail.com'
+# app.config['MAIL_PASSWORD'] = 'ijaefbyibmwtmobf'
+# app.config['MAIL_DEFAULT_SENDER'] = 'mypregbot@gmail.com'
 
-mail = Mail(app)
+# mail = Mail(app)
 
 # Twilio account credentials
 account_sid = 'AC4923a8ee90fd7a3ca656b5e063edeb45'
@@ -50,6 +51,27 @@ def send_msg(to_phone_number, message):
             from_='+15075568490',
             to=to_phone_number
         )
+def send_email(to_email, subject, html_content):
+    url = "https://api.brevo.com/v3/smtp/email"
+
+    headers = {
+        "accept": "application/json",
+        "api-key": BREVO_API_KEY,
+        "content-type": "application/json",
+    }
+
+    payload = {
+        "sender": {
+            "name": SENDER_NAME,
+            "email": SENDER_EMAIL
+        },
+        "to": [{"email": to_email}],
+        "subject": subject,
+        "htmlContent": html_content
+    }
+
+    response = requests.post(url, json=payload, headers=headers)
+    response.raise_for_status()
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:LiWTXGZPopMlSrUIEldyHGUeRUlmeeqD@yamabiko.proxy.rlwy.net:34102/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -178,10 +200,10 @@ def send_message():
 
         # Send email
         try:
-            msg = Message(subject='New message from PREGBOT',
-                        recipients=['mypregbot@gmail.com'])  # Admin's email
-            msg.body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
-            mail.send(msg)
+            subject='New message from PREGBOT'
+            recipient='pregbotapp@gmail.com'  # Admin's email
+            body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
+            send_email(recipient,subject,body)
             flash('Mail sent successfully.', 'success')
             return redirect('/contact?status=success')
         except Exception as e:
@@ -400,14 +422,14 @@ def signup():
             new_user.set_password(password)
             db.session.add(new_user)
             db.session.commit()
-            msg = Message(subject='NEW USER REGISTERED IN PREGBOT',
-                    recipients=['mypregbot@gmail.com'])  # Admin's email
-            msg.body = f"Name: {new_user.username}\nEmail: {new_user.email}\nMobile No: {new_user.mobile}"
-            mail.send(msg)
-            msg1 = Message(subject='PREGBOT USER REGISTRATION SUCCESSFUL',
-                           recipients=[str(new_user.email)])
-            msg1.body = f"Name: {new_user.fullname}\nUsername: {new_user.username}\nEmail: {new_user.email}\nMobile No: {new_user.mobile}"
-            mail.send(msg1)
+            subject='NEW USER REGISTERED IN PREGBOT'
+            recipient='mypregbot@gmail.com'  # Admin's email
+            body = f"Name: {new_user.username}\nEmail: {new_user.email}\nMobile No: {new_user.mobile}"
+            send_email(recipient,subject,body)
+            subject1='PREGBOT USER REGISTRATION SUCCESSFUL'
+            recipient1=str(new_user.email)
+            body1 = f"Name: {new_user.fullname}\nUsername: {new_user.username}\nEmail: {new_user.email}\nMobile No: {new_user.mobile}"
+            send_email(recipient,subject,body)
             flash('Account created successfully. You can now log in.', 'success')
             return redirect(url_for('login'))
         else:
