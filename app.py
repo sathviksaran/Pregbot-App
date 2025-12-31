@@ -51,7 +51,7 @@ def send_msg(to_phone_number, message):
             to=to_phone_number
         )
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://freedb_pregbot:%24T%25CF4ymD%3F5YYAa@sql.freedb.tech:3306/freedb_pregbotdb'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:LiWTXGZPopMlSrUIEldyHGUeRUlmeeqD@mysql.railway.internal:3306/railway'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
