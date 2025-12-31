@@ -8,13 +8,12 @@ from nltk.stem import WordNetLemmatizer
 from tensorflow.keras.models import load_model # type: ignore
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-from googletrans import Translator
 # from flask_mail import Message,Mail
 from twilio.rest import Client
 import os
 import requests
 from datetime import datetime, timezone, timedelta
-
+from deep_translator import GoogleTranslator
 
 # Writable directory on Render
 NLTK_DATA_DIR = os.path.join(os.getcwd(), "nltk_data")
@@ -28,6 +27,11 @@ nltk.download("punkt", download_dir=NLTK_DATA_DIR)
 nltk.download("punkt_tab", download_dir=NLTK_DATA_DIR)
 nltk.download("wordnet", download_dir=NLTK_DATA_DIR)
 nltk.download("omw-1.4", download_dir=NLTK_DATA_DIR)
+
+from nltk.corpus import wordnet
+
+# Force WordNet to load at startup (IMPORTANT)
+_ = wordnet.synsets("test")
 
 lemmatizer = WordNetLemmatizer()
 with open('bot.json') as json_file:
@@ -304,16 +308,20 @@ def delete_daily_routine(routine_id):
 
 @app.route('/translate', methods=['POST'])
 def translate_text():
-    text = request.form['text']
-    target_language = request.form['target_language']
-    
-    translator = Translator()
-    
     try:
-        translated_text = translator.translate(text, dest=target_language).text
+        text = request.form.get('text', '')
+        target_language = request.form.get('target_language', 'en')
+
+        translated_text = GoogleTranslator(
+            source='auto',
+            target=target_language
+        ).translate(text)
+
         return jsonify({'translated_text': translated_text}), 200
+
     except Exception as e:
-        return jsonify({'error': str(e)}), 500
+        app.logger.error(f"Translate error: {e}")
+        return jsonify({'translated_text': text}), 200
 
 
 @app.route('/find')
@@ -323,16 +331,24 @@ def find_hospitals():
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    if request.method == 'POST':
-        message = request.form['message']
+    try:
+        message = request.form.get('message', '').strip()
+
+        if not message:
+            return jsonify({'response': 'Please enter a message.'}), 200
 
         if message.lower() == 'quit':
-            return jsonify({'response': 'Goodbye!'})
+            return jsonify({'response': 'Goodbye!'}), 200
 
         ints = predict_class(message)
         resp = get_response(ints, intents)
 
-        return jsonify({'response': resp})
+        return jsonify({'response': resp}), 200
+
+    except Exception as e:
+        app.logger.error(f"Chat error: {e}")
+        return jsonify({'response': 'Sorry, something went wrong.'}), 200
+
 
 @app.route('/healthprofile', methods=['GET', 'POST'])# update the data
 def chatbot_submit():
