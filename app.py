@@ -14,6 +14,8 @@ import os
 import requests
 from datetime import datetime, timezone, timedelta
 from deep_translator import GoogleTranslator
+from functools import lru_cache
+from nltk.corpus import wordnet
 
 # Writable directory on Render
 NLTK_DATA_DIR = os.path.join(os.getcwd(), "nltk_data")
@@ -28,7 +30,7 @@ nltk.download("punkt_tab", download_dir=NLTK_DATA_DIR)
 nltk.download("wordnet", download_dir=NLTK_DATA_DIR)
 nltk.download("omw-1.4", download_dir=NLTK_DATA_DIR)
 
-from nltk.corpus import wordnet
+
 
 # Force WordNet to load at startup (IMPORTANT)
 _ = wordnet.synsets("test")
@@ -329,8 +331,12 @@ def find_hospitals():
     user = session['username']
     return render_template('find.html',username=user)
 
+
+
 @app.route('/chat', methods=['POST'])
 def chat():
+    
+    signal.alarm(5)
     try:
         message = request.form.get('message', '').strip()
 
@@ -340,7 +346,7 @@ def chat():
         if message.lower() == 'quit':
             return jsonify({'response': 'Goodbye!'}), 200
 
-        ints = predict_class(message)
+        ints = cached_predict(message)
         resp = get_response(ints, intents)
 
         return jsonify({'response': resp}), 200
@@ -348,6 +354,8 @@ def chat():
     except Exception as e:
         app.logger.error(f"Chat error: {e}")
         return jsonify({'response': 'Sorry, something went wrong.'}), 200
+    finally:   
+        signal.alarm(0)
 
 
 @app.route('/healthprofile', methods=['GET', 'POST'])# update the data
@@ -580,6 +588,10 @@ def predict_class(sentence):
     for r in results:
         return_list.append({'intent': classes[r[0]], 'probability': str(r[1])})
     return return_list
+
+@lru_cache(maxsize=500)
+def cached_predict(sentence):
+    return predict_class(sentence)
 
 def get_response(intents_list, intents_json):
     tag = intents_list[0]['intent']
