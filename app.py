@@ -29,7 +29,12 @@ model = load_model('chatbotmodel.h5')
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-fallback-key")
+app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY")
+app.config.update(
+    SESSION_COOKIE_SECURE=True,
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SAMESITE="Lax",
+)
 
 
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
