@@ -24,6 +24,10 @@ app = Flask(__name__)
 
 # mail = Mail(app)
 
+BREVO_API_KEY = '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'
+SENDER_EMAIL = 'pregbotapp@gmail.com'
+SENDER_NAME = 'PREGBOT'
+
 # Configure SQLAlchemy
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://freedb_pregbot:#Da!C*5t39JWnUv@sql.freedb.tech:3306/freedb_Pregbot'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
