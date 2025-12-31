@@ -453,7 +453,7 @@ def signup():
             subject1='PREGBOT USER REGISTRATION SUCCESSFUL'
             recipient1=str(new_user.email)
             body1 = f"Name: {new_user.fullname}\nUsername: {new_user.username}\nEmail: {new_user.email}\nMobile No: {new_user.mobile}"
-            send_email(recipient,subject,body)
+            send_email(recipient1,subject1,body1)
             flash('Account created successfully. You can now log in.', 'success')
             return redirect(url_for('login'))
         else:
