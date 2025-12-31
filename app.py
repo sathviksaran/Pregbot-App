@@ -518,6 +518,7 @@ def get_response(intents_list, intents_json):
     return result
 
 if __name__ == "__main__":
-    app.config['SECRET_KEY'] = 'hello'  # Replace with your actual secret key
+    app.config['SECRET_KEY'] = os.environ.get("SECRET_KEY", "dev-fallback-key")
+  # Replace with your actual secret key
     port = int(os.environ.get("PORT", 10000))
     app.run(host="0.0.0.0",debug=False,port=port)
