@@ -343,8 +343,6 @@ def chat():
     except Exception as e:
         app.logger.error(f"Chat error: {e}")
         return jsonify({'response': 'Sorry, something went wrong.'}), 200
-    finally:   
-        signal.alarm(0)
 
 
 @app.route('/healthprofile', methods=['GET', 'POST'])# update the data
