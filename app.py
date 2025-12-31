@@ -11,6 +11,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from googletrans import Translator
 from flask_mail import Message,Mail
 from twilio.rest import Client
+import os
 
 
 nltk.download('wordnet')
@@ -518,4 +519,5 @@ def get_response(intents_list, intents_json):
 
 if __name__ == "__main__":
     app.config['SECRET_KEY'] = 'hello'  # Replace with your actual secret key
-    app.run(debug=False,port=8888)
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0",debug=False,port=port)
