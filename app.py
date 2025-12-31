@@ -1,60 +1,39 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
-import nltk
+# import nltk
 import random
 import numpy as np
 import json
-import pickle
-from nltk.stem import WordNetLemmatizer
-from tensorflow.keras.models import load_model # type: ignore
+# import pickle
+# from nltk.stem import WordNetLemmatizer
+# from tensorflow.keras.models import load_model # type: ignore
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 # from flask_mail import Message,Mail
 from twilio.rest import Client
 import os
 import requests
-from datetime import datetime, timezone, timedelta
+# from datetime import datetime, timezone, timedelta
 from deep_translator import GoogleTranslator
-from functools import lru_cache
-from nltk.corpus import wordnet
-import signal
-class TimeoutException(Exception):
-    pass
+# from functools import lru_cache
+# from nltk.corpus import wordnet
+# import signal
 
-def timeout_handler(signum, frame):
-    raise TimeoutException()
+HF_API_URL = 'https://sathviksaran-pregbot-ml.hf.space/predict'
 
-signal.signal(signal.SIGALRM, timeout_handler)
+def predict_intent_remote(text):
+    response = requests.post(
+        HF_API_URL,
+        json={"text": text},
+        timeout=5
+    )
+    response.raise_for_status()
+    return response.json()["intent"]
 
-# Writable directory on Render
-NLTK_DATA_DIR = os.path.join(os.getcwd(), "nltk_data")
-os.makedirs(NLTK_DATA_DIR, exist_ok=True)
-
-# Tell NLTK where to look
-nltk.data.path.append(NLTK_DATA_DIR)
-
-# Download required resources
-nltk.download("punkt", download_dir=NLTK_DATA_DIR)
-nltk.download("punkt_tab", download_dir=NLTK_DATA_DIR)
-nltk.download("wordnet", download_dir=NLTK_DATA_DIR)
-nltk.download("omw-1.4", download_dir=NLTK_DATA_DIR)
-
-
-
-# Force WordNet to load at startup (IMPORTANT)
-_ = wordnet.synsets("test")
-
-lemmatizer = WordNetLemmatizer()
 with open('bot.json') as json_file:
     intents = json.load(json_file)
 
-words = pickle.load(open('words.pkl', 'rb'))
-# Fast lookup instead of nested loops
-word_index = {w: i for i, w in enumerate(words)}
 
-classes = pickle.load(open('classes.pkl', 'rb'))
-model = load_model('chatbotmodel.h5')
-
-LAUNCH_TIME = datetime(2026, 1, 1, 0, 0, 0, tzinfo=timezone(timedelta(hours=5, minutes=30)))  # IST
+# LAUNCH_TIME = datetime(2026, 1, 1, 0, 0, 0, tzinfo=timezone(timedelta(hours=5, minutes=30)))  # IST
 
 
 app = Flask(__name__)
@@ -169,15 +148,15 @@ class PregnancyFormData(db.Model):
     mood_changes = db.Column(db.String(20))
     prenatal_checkups = db.Column(db.String(20))
 
-@app.before_request
-def check_launch_time():
-    now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+# @app.before_request
+# def check_launch_time():
+#     now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
 
-    if now < LAUNCH_TIME:
-        # Allow admin / health routes if needed
-        if request.path.startswith("/health"):
-            return None
-        return render_template("coming_soon.html"), 503
+#     if now < LAUNCH_TIME:
+#         # Allow admin / health routes if needed
+#         if request.path.startswith("/health"):
+#             return None
+#         return render_template("coming_soon.html"), 503
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -347,7 +326,6 @@ def find_hospitals():
 @app.route('/chat', methods=['POST'])
 def chat():
     
-    signal.alarm(5)
     try:
         message = request.form.get('message', '').strip()
 
@@ -357,14 +335,10 @@ def chat():
         if message.lower() == 'quit':
             return jsonify({'response': 'Goodbye!'}), 200
         
-        if len(message) > 120:
-            return jsonify({
-                "response": "Please ask a shorter question 🙂"
-            }), 200
-        ints = cached_predict(message)
-        resp = get_response(ints, intents)
+        
+        intent = predict_intent_remote(message)
+        return jsonify({"response": intent})
 
-        return jsonify({'response': resp}), 200
 
     except Exception as e:
         app.logger.error(f"Chat error: {e}")
@@ -578,59 +552,6 @@ def logout():
     # Redirect to the login page
     return redirect(url_for('login'))
 
-def clean_up_sentence(sentence):
-    # Hard limit (prevents TF hang)
-    sentence = sentence[:200]
-
-    sentence_words = nltk.word_tokenize(sentence.lower())
-    sentence_words = [lemmatizer.lemmatize(word) for word in sentence_words]
-    return sentence_words
-
-
-def bag_of_words(sentence):
-    sentence_words = clean_up_sentence(sentence)
-    bag = np.zeros(len(words), dtype=np.float32)
-
-    for w in sentence_words:
-        idx = word_index.get(w)
-        if idx is not None:
-            bag[idx] = 1.0
-
-    return bag
-
-def predict_class(sentence):
-    bow = bag_of_words(sentence)
-
-    # Batch shape: (1, n)
-    res = model.predict(
-        np.expand_dims(bow, axis=0),
-        verbose=0
-    )[0]
-
-    ERROR_THRESHOLD = 0.25
-    results = [
-        (i, r) for i, r in enumerate(res) if r > ERROR_THRESHOLD
-    ]
-
-    results.sort(key=lambda x: x[1], reverse=True)
-
-    return [
-        {"intent": classes[i], "probability": float(r)}
-        for i, r in results
-    ]
-
-@lru_cache(maxsize=500)
-def cached_predict(sentence):
-    return predict_class(sentence)
-
-def get_response(intents_list, intents_json):
-    tag = intents_list[0]['intent']
-    list_of_intents = intents_json['intents']
-    for i in list_of_intents:
-        if i['tag'] == tag:
-            result = random.choice(i['responses'])
-            break
-    return result
 
 if __name__ == "__main__":
   # Replace with your actual secret key
