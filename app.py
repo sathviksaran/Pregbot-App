@@ -589,6 +589,16 @@ def get_response(intents_list, intents_json):
             break
     return result
 
+def send_email_at_6():
+    with app.app_context():
+        users = User.query.all()
+        subject = "Daily Link Reminder"
+        body = "Here is the link you requested: http://finally-merry-tadpole.ngrok-free.app/form"
+        for user in users:
+            send_email(user.email, subject, body)
+
+
+
 if __name__ == "__main__":
   # Replace with your actual secret key
     port = int(os.environ.get("PORT", 10000))
