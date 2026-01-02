@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify, abort
 # import nltk
 import random
 import numpy as np
@@ -148,15 +148,24 @@ class PregnancyFormData(db.Model):
     mood_changes = db.Column(db.String(20))
     prenatal_checkups = db.Column(db.String(20))
 
-# @app.before_request
-# def check_launch_time():
-#     now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
 
-#     if now < LAUNCH_TIME:
-#         # Allow admin / health routes if needed
-#         if request.path.startswith("/health"):
-#             return None
-#         return render_template("coming_soon.html"), 503
+@app.before_request
+def protect_internal_route():
+    if request.path == "/internal/run-mail-jobs":
+        token = request.headers.get("X-CRON-KEY")
+        if token != os.environ.get("CRON_SECRET"):
+            abort(401)
+
+@app.before_request
+def check_launch_time():
+    now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+
+    if now < LAUNCH_TIME:
+        # Allow admin / health routes if needed
+        if request.path.startswith("/health"):
+            return None
+        return render_template("coming_soon.html"), 503
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
