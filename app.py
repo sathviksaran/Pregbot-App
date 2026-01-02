@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify, abort
+from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify, abort, Response
 import random
 import numpy as np
 import json
@@ -12,13 +12,7 @@ from deep_translator import GoogleTranslator
 import time
 from zoneinfo import ZoneInfo
 from gtts import gTTS
-import uuid
-
-def generate_audio(text, lang):
-    filename = f"static/audio/{uuid.uuid4()}.mp3"
-    tts = gTTS(text=text, lang=lang)
-    tts.save(filename)
-    return filename
+import io
 
 HF_API_URL = os.environ.get("HF_API_URL")
 HF_TOKEN = os.environ.get("HF_TOKEN")
@@ -184,6 +178,25 @@ def check_launch_time():
             return None
         return render_template("coming_soon.html"), 503
 
+
+@app.route("/tts", methods=["POST"])
+def tts():
+    data = request.get_json()
+    text = data.get("text")
+    lang = data.get("lang", "en")
+
+    mp3_fp = io.BytesIO()
+    tts = gTTS(text=text, lang=lang)
+    tts.write_to_fp(mp3_fp)
+    mp3_fp.seek(0)
+
+    return Response(
+        mp3_fp.read(),
+        mimetype="audio/mpeg",
+        headers={
+            "Content-Disposition": "inline; filename=tts.mp3"
+        }
+    )
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
