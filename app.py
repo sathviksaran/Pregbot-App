@@ -87,7 +87,6 @@ def send_email(to_email, subject, html_content):
     response = requests.post(url, json=payload, headers=headers)
     response.raise_for_status()
 
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:LiWTXGZPopMlSrUIEldyHGUeRUlmeeqD@yamabiko.proxy.rlwy.net:34102/railway'
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
