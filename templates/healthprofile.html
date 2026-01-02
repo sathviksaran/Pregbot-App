@@ -174,9 +174,9 @@
   <div class="container">
     <form action="/healthprofile" method="post" id="healthForm">
       <h2>Hi {{user.username}}! Enter your health details</h2>
-      <input type="text" name="fullname" placeholder="Full Name" id="name" value="{{ profile.fullname }}">
-      <input type="email" name="email" placeholder="Email" value="{{ profile.email }}">
-      <input type="tel" name="mobile" placeholder="Mobile Number" value="{{ profile.mobile }}" required>
+      <input type="text" name="fullname" placeholder="Full Name" id="name" value="{{ user.fullname }}" readonly>
+      <input type="email" name="email" placeholder="Email" value="{{ user.email }}" readonly>
+      <input type="tel" name="mobile" placeholder="Mobile Number" value="{{ user.mobile }}" required>
       <input type="text" name="place" placeholder="Place" value="{{profile.place}}" required>
       <input type="number" name="age" placeholder="Age" value="{{profile.age}}" required>
       <input type="number" name="height" placeholder="Height(in cms)" value="{{profile.height}}" required>
