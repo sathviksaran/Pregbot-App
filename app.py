@@ -11,7 +11,32 @@ from datetime import datetime, timezone, timedelta
 from deep_translator import GoogleTranslator
 import time
 from zoneinfo import ZoneInfo
+from google.cloud import texttospeech
+import base64
 
+# Initialize client
+client = texttospeech.TextToSpeechClient()
+
+def google_tts(text, lang="en-IN", voice_type="NEURAL2"):
+    synthesis_input = texttospeech.SynthesisInput(text=text)
+
+    voice = texttospeech.VoiceSelectionParams(
+        language_code=lang,
+        name=f"{lang}-{voice_type}",
+        ssml_gender=texttospeech.SsmlVoiceGender.FEMALE
+    )
+
+    audio_config = texttospeech.AudioConfig(
+        audio_encoding=texttospeech.AudioEncoding.MP3
+    )
+
+    response = client.synthesize_speech(
+        input=synthesis_input,
+        voice=voice,
+        audio_config=audio_config
+    )
+
+    return response.audio_content
 
 HF_API_URL = os.environ.get("HF_API_URL")
 HF_TOKEN = os.environ.get("HF_TOKEN")
@@ -177,6 +202,18 @@ def check_launch_time():
             return None
         return render_template("coming_soon.html"), 503
 
+@app.route("/gtts", methods=["POST"])
+def tts_google():
+    data = request.get_json()
+    text = data.get("text", "")
+    lang = data.get("lang", "en-IN")
+
+    try:
+        audio_bytes = google_tts(text, lang)
+        audio_base64 = base64.b64encode(audio_bytes).decode("utf-8")
+        return jsonify({"audio_base64": audio_base64})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
