@@ -29,7 +29,7 @@ def predict_intent_remote(text):
         timeout=5
     )
     response.raise_for_status()
-    return response.json()["intent"]
+    return response.json()["response"]
 
 def translate_message(message, target_language): 
     translated_message = GoogleTranslator(
@@ -37,9 +37,6 @@ def translate_message(message, target_language):
         target=target_language
     ).translate(message)
     return translated_message
-
-with open('bot.json') as json_file:
-    intents = json.load(json_file)
 
 
 # LAUNCH_TIME = datetime(2026, 1, 1, 0, 0, 0, tzinfo=timezone(timedelta(hours=5, minutes=30)))  # IST
@@ -374,8 +371,7 @@ def chat():
             return jsonify({'response': 'Goodbye!'}), 200
         
         
-        ints = predict_intent_remote(message)
-        resp = get_response(ints, intents)
+        resp = predict_intent_remote(message)
         return jsonify({"response": resp})
 
 
@@ -591,15 +587,6 @@ def logout():
 
     # Redirect to the login page
     return redirect(url_for('login'))
-
-def get_response(intents_list, intents_json):
-    tag = intents_list[0]['intent']
-    list_of_intents = intents_json['intents']
-    for i in list_of_intents:
-        if i['tag'] == tag:
-            result = random.choice(i['responses'])
-            break
-    return result
 
 def send_email_at_6():
     with app.app_context():
