@@ -17,6 +17,8 @@ from deep_translator import GoogleTranslator
 # from functools import lru_cache
 # from nltk.corpus import wordnet
 # import signal
+from datetime import datetime
+import time
 
 HF_API_URL = 'https://sathviksaran-pregbot-ml.hf.space/predict'
 
