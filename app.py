@@ -76,12 +76,12 @@ SENDER_NAME = 'PREGBOT'
 
 # Twilio account credentials
 account_sid = 'AC4923a8ee90fd7a3ca656b5e063edeb45'
-auth_token = '9530ba9aa237e3cfbc9d20ffdedb2546'
+auth_token = '6638bd03af33a3b6d223cd7a549c7a36'
 client = Client(account_sid, auth_token)
 def send_msg(to_phone_number, message):
     message = client.messages.create(
             body=message,
-            from_='+15075568490',
+            from_='+15407387218',
             to=to_phone_number
         )
 def send_email(to_email, subject, html_content):
