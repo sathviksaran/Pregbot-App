@@ -359,74 +359,74 @@ ul.flashes {
       }
     }
     
-// async function speakMessage(message) {
-//   try {
-//     const response = await fetch("/tts", {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json"
-//       },
-//       body: JSON.stringify({
-//         text: message,
-//         lang: languageSelect.value
-//       })
-//     });
+async function speakMessage(message) {
+  try {
+    const response = await fetch("/tts", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        text: message,
+        lang: languageSelect.value
+      })
+    });
 
-//     if (!response.ok) {
-//       console.error("TTS failed");
-//       return;
-//     }
+    if (!response.ok) {
+      console.error("TTS failed");
+      return;
+    }
 
-//     const blob = await response.blob();
-//     const audioUrl = URL.createObjectURL(blob);
+    const blob = await response.blob();
+    const audioUrl = URL.createObjectURL(blob);
 
-//     const audio = new Audio(audioUrl);
-//     audio.play();
+    const audio = new Audio(audioUrl);
+    audio.play();
 
-//   } catch (err) {
-//     console.error("TTS error:", err);
-//   }
-// }
-
-    
-function speakMessage(text, langCode) {
-  if (!('speechSynthesis' in window)) {
-    console.warn("Speech synthesis not supported");
-    return;
-  }
-
-  const utterance = new SpeechSynthesisUtterance(text);
-
-  // Normalize language codes
-  const langMap = {
-    "en": "en-IN",
-    "hi": "hi-IN",
-    "te": "te-IN",
-    "ta": "ta-IN",
-    "kn": "kn-IN"
-  };
-
-  utterance.lang = langMap[langCode] || "en-IN";
-
-  // Ensure voices are loaded
-  let voices = speechSynthesis.getVoices();
-  if (voices.length === 0) {
-    speechSynthesis.onvoiceschanged = () => {
-      voices = speechSynthesis.getVoices();
-      setVoiceAndSpeak();
-    };
-  } else {
-    setVoiceAndSpeak();
-  }
-
-  function setVoiceAndSpeak() {
-    const voice = voices.find(v => v.lang === utterance.lang);
-    if (voice) utterance.voice = voice;
-
-    speechSynthesis.cancel(); // stop previous
-    speechSynthesis.speak(utterance);
+  } catch (err) {
+    console.error("TTS error:", err);
   }
 }
+
+    
+// function speakMessage(text, langCode) {
+//   if (!('speechSynthesis' in window)) {
+//     console.warn("Speech synthesis not supported");
+//     return;
+//   }
+
+//   const utterance = new SpeechSynthesisUtterance(text);
+
+//   // Normalize language codes
+//   const langMap = {
+//     "en": "en-IN",
+//     "hi": "hi-IN",
+//     "te": "te-IN",
+//     "ta": "ta-IN",
+//     "kn": "kn-IN"
+//   };
+
+//   utterance.lang = langMap[langCode] || "en-IN";
+
+//   // Ensure voices are loaded
+//   let voices = speechSynthesis.getVoices();
+//   if (voices.length === 0) {
+//     speechSynthesis.onvoiceschanged = () => {
+//       voices = speechSynthesis.getVoices();
+//       setVoiceAndSpeak();
+//     };
+//   } else {
+//     setVoiceAndSpeak();
+//   }
+
+//   function setVoiceAndSpeak() {
+//     const voice = voices.find(v => v.lang === utterance.lang);
+//     if (voice) utterance.voice = voice;
+
+//     speechSynthesis.cancel(); // stop previous
+//     speechSynthesis.speak(utterance);
+//   }
+// }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -492,7 +492,7 @@ function speakMessage(text, langCode) {
 
             // Scroll to the bottom of the chat container
             chatContainer.scrollTop = chatContainer.scrollHeight;
-            speakMessage(translatedText, languageSelect.value);
+            speakMessage(translatedText);
             // Save the selected language preference to localStorage
             localStorage.setItem('selectedLanguage', languageSelect.value);
           } else {
@@ -529,7 +529,7 @@ function speakMessage(text, langCode) {
     const lang1={'te':'Telugu','hi':'Hindi','en':'English','ta':'Tamil','kn':'Kannada'};
     const sel_lang = lang1[selectedLanguage]
     const lang = `Selected language is ${sel_lang}`;
-    speakMessage(lang,languageSelect.value);
+    speakMessage(lang);
       // Save the selected language preference to localStorage
       localStorage.setItem('selectedLanguage', selectedLanguage);
     });
