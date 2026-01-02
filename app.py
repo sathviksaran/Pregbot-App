@@ -177,9 +177,11 @@ def run_mail_jobs():
     # EXACT daily time
     if now == "06:00":
         send_email_at_6()
+        send_msg_at_6()
 
     # other reminder logic can also live here
     check_and_send_emails()
+    check_and_send_msgs()
 
     return {"status": "Mail job executed"}
 
@@ -600,7 +602,7 @@ def send_email_at_6():
     with app.app_context():
         users = User.query.all()
         subject = "Daily Link Reminder"
-        body = "Here is the link you requested: http://finally-merry-tadpole.ngrok-free.app/form"
+        body = "Here is the link you requested: https://pregbot-app.onrender.com/form"
         for user in users:
             send_email(user.email, subject, body)
 
@@ -695,7 +697,7 @@ def check_and_send_msgs():
 def send_msg_at_6():
     with app.app_context():
         users = User.query.all()
-        body = "NEW MESSAGE FROM PREGBOT!!! Here is the link you requested: http://finally-merry-tadpole.ngrok-free.app/form"
+        body = "NEW MESSAGE FROM PREGBOT!!! Here is the link you requested: https://pregbot-app.onrender.com/form"
         for user in users:
             send_msg('+91'+str(user.mobile), body)
 
