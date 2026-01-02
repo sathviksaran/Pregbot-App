@@ -652,7 +652,7 @@ def check_and_send_emails():
 def check_and_send_msgs():
     with app.app_context():
         try:
-            current_time = datetime.now().strftime("%H:%M")
+            current_time = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M")
             print(f"Current Time: {current_time}")
 
             # Query the database for routines with matching time
@@ -692,7 +692,12 @@ def check_and_send_msgs():
             db.session.rollback()
             print(f"An error occurred: {e}")
 
-
+def send_msg_at_6():
+    with app.app_context():
+        users = User.query.all()
+        body = "NEW MESSAGE FROM PREGBOT!!! Here is the link you requested: http://finally-merry-tadpole.ngrok-free.app/form"
+        for user in users:
+            send_msg('+91'+str(user.mobile), body)
 
 if __name__ == "__main__":
   # Replace with your actual secret key
