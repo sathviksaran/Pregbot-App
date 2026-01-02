@@ -14,6 +14,21 @@ from zoneinfo import ZoneInfo
 from google.cloud import texttospeech
 import base64
 
+def setup_google_credentials():
+    creds_json = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
+    if not creds_json:
+        raise RuntimeError("GOOGLE_APPLICATION_CREDENTIALS env var not set")
+
+    creds_path = "/tmp/gcp-tts.json"
+
+    with open(creds_path, "w") as f:
+        f.write(creds_json)
+
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = creds_path
+
+# Call this BEFORE using Google TTS
+setup_google_credentials()
+
 # Initialize client
 client = texttospeech.TextToSpeechClient()
 
