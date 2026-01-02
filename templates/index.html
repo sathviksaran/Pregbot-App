@@ -298,6 +298,22 @@ ul.flashes {
     const voiceInputBtn = document.getElementById('voice-input-btn');
 
     
+    function mapToGoogleTTSLang(lang) {
+      const map = {
+        en: "en-IN",
+        hi: "hi-IN",
+        te: "te-IN",
+        ta: "ta-IN",
+        kn: "kn-IN",
+        "en-IN": "en-IN",
+        "hi-IN": "hi-IN",
+        "te-IN": "te-IN",
+        "ta-IN": "ta-IN",
+        "kn-IN": "kn-IN"
+      };
+      return map[lang] || "en-IN";
+    }
+    
     function isFirefox() {
       return navigator.userAgent.toLowerCase().includes("firefox");
     }
@@ -359,7 +375,29 @@ ul.flashes {
       }
     }
     
-
+    
+    async function speakMessageGoogle(text, lang) {
+      try {
+        const response = await fetch("/gtts", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            text: text,
+            lang: lang
+          })
+        });
+    
+        const data = await response.json();
+        if (data.audio_base64) {
+          const audio = new Audio("data:audio/mp3;base64," + data.audio_base64);
+          audio.play();
+        } else {
+          console.error("No audio returned", data);
+        }
+      } catch (err) {
+        console.error("Google TTS error:", err);
+      }
+    }
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -425,7 +463,7 @@ ul.flashes {
 
             // Scroll to the bottom of the chat container
             chatContainer.scrollTop = chatContainer.scrollHeight;
-            speakMessage(translatedText);
+            speakMessageGoogle(translatedText,mapToGoogleTTSLang(languageSelect.value));
             // Save the selected language preference to localStorage
             localStorage.setItem('selectedLanguage', languageSelect.value);
           } else {
@@ -462,7 +500,7 @@ ul.flashes {
     const lang1={'te':'Telugu','hi':'Hindi','en':'English','ta':'Tamil','kn':'Kannada'};
     const sel_lang = lang1[selectedLanguage]
     const lang = `Selected language is ${sel_lang}`;
-    speakMessage(lang);
+    speakMessage(lang,mapToGoogleTTSLang(languageSelect.value));
       // Save the selected language preference to localStorage
       localStorage.setItem('selectedLanguage', selectedLanguage);
     });
