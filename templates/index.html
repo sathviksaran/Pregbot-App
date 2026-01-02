@@ -500,7 +500,7 @@ ul.flashes {
     const lang1={'te':'Telugu','hi':'Hindi','en':'English','ta':'Tamil','kn':'Kannada'};
     const sel_lang = lang1[selectedLanguage]
     const lang = `Selected language is ${sel_lang}`;
-    speakMessage(lang,mapToGoogleTTSLang(languageSelect.value));
+    speakMessageGoogle(lang,mapToGoogleTTSLang(languageSelect.value));
       // Save the selected language preference to localStorage
       localStorage.setItem('selectedLanguage', selectedLanguage);
     });
