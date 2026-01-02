@@ -649,6 +649,51 @@ def check_and_send_emails():
             db.session.rollback()
             print(f"An error occurred: {e}")
 
+def check_and_send_msgs():
+    with app.app_context():
+        try:
+            current_time = datetime.now().strftime("%H:%M")
+            print(f"Current Time: {current_time}")
+
+            # Query the database for routines with matching time
+            routines = DailyRoutine.query.filter_by(time=current_time).all()
+
+            for routine in routines:
+                to_phone_number = '+91'+str(routine.mobile)
+                event = routine.event
+
+                # Translate event message into multiple languages
+                translated_messages = {}
+                for language in ['te', 'en', 'ta', 'kn', 'hi']:  # Telugu, English, Tamil, Kannada, Hindi
+                    translated_event = translate_message(event, language)
+                    translated_messages[language] = translated_event
+
+                # Prepare email body with content in all languages
+                msg_body = "Your Daily Remainder"
+                for language, translated_event in translated_messages.items():
+                    msg_body += f"{language.upper()}: {translated_event}\n"
+
+                try:
+                    send_msg(to_phone_number, msg_body)
+                    print(f"Message sent successfully to {to_phone_number}")
+                except Exception as e:
+                    print(f"Error sending message to {to_phone_number}: {e}")
+
+                # Print values to console
+                print(f"Routine ID: {routine.id}, Time: {routine.time}, Event: {event}, Mobile: {to_phone_number}")
+
+            print(f"Checked and sent messages at {current_time}")
+
+            # Commit changes to the database
+            db.session.commit()
+
+        except Exception as e:
+            # Rollback in case of an error
+            db.session.rollback()
+            print(f"An error occurred: {e}")
+
+
+
 if __name__ == "__main__":
   # Replace with your actual secret key
     port = int(os.environ.get("PORT", 10000))
