@@ -401,7 +401,7 @@ def chatbot_submit():
             existing_profile.notify = notify
             existing_profile.address = address
 
-            user_profile = user.query.filter_by(email=email).first()
+            user_profile = User.query.filter_by(email=email).first()
             user_profile.mobile = mobile
         else:
             # Create a new profile
