@@ -597,7 +597,50 @@ def send_email_at_6():
         for user in users:
             send_email(user.email, subject, body)
 
+def check_and_send_emails():
+    with app.app_context():
+        try:
+            current_time = datetime.now().strftime("%H:%M")
+            print(f"Current Time: {current_time}")
 
+            # Query the database for routines with matching time
+            routines = DailyRoutine.query.filter_by(time=current_time).all()
+
+            for routine in routines:
+                recipient = routine.email
+                event = routine.event
+
+                # Translate event message into multiple languages
+                translated_messages = {}
+                for language in ['te', 'en', 'ta', 'kn', 'hi']:  # Telugu, English, Tamil, Kannada, Hindi
+                    translated_event = translate_message(event, language)
+                    translated_messages[language] = translated_event
+
+                # Prepare email body with content in all languages
+                email_body = ""
+                for language, translated_event in translated_messages.items():
+                    email_body += f"{language.upper()}: {translated_event}\n"
+
+                # Send email
+                subject = "Your Daily Routine Reminder"
+                try:
+                    send_email(recipient, subject, email_body)
+                    print(f"Email sent successfully to {recipient}")
+                except Exception as e:
+                    print(f"Error sending email to {recipient}: {e}")
+
+                # Print values to console
+                print(f"Routine ID: {routine.id}, Time: {routine.time}, Event: {event}, Email: {recipient}")
+
+            print(f"Checked and sent emails at {current_time}")
+
+            # Commit changes to the database
+            db.session.commit()
+
+        except Exception as e:
+            # Rollback in case of an error
+            db.session.rollback()
+            print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
   # Replace with your actual secret key
