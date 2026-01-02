@@ -51,7 +51,7 @@ app.config.update(
 
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
 SENDER_EMAIL = os.environ.get("SENDER_EMAIL")
-SENDER_NAME = os.environ.get("SENDER_EMAIL")
+SENDER_NAME = os.environ.get("SENDER_NAME")
 
 account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
 auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
