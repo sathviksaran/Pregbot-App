@@ -405,7 +405,7 @@ def chatbot_submit():
         
         # Check if a profile with the given email already exists
         existing_profile = profile.query.filter_by(email=email).first()
-
+        
         if existing_profile:
             # Update the existing profile
             existing_profile.name = fullname
@@ -420,6 +420,9 @@ def chatbot_submit():
             existing_profile.other_disease = disease_description
             existing_profile.notify = notify
             existing_profile.address = address
+
+            user_profile = user.query.filter_by(email=email).first()
+            user_profile.mobile = mobile
         else:
             # Create a new profile
             new_profile = profile(
