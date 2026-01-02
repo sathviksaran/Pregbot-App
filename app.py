@@ -177,15 +177,15 @@ def run_mail_jobs():
 
     return {"status": "Mail job executed"}
 
-@app.before_request
-def check_launch_time():
-    now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
+# @app.before_request
+# def check_launch_time():
+#     now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
 
-    if now < LAUNCH_TIME:
-        # Allow admin / health routes if needed
-        if request.path.startswith("/health"):
-            return None
-        return render_template("coming_soon.html"), 503
+#     if now < LAUNCH_TIME:
+#         # Allow admin / health routes if needed
+#         if request.path.startswith("/health"):
+#             return None
+#         return render_template("coming_soon.html"), 503
 
 
 @app.route('/', methods=['GET', 'POST'])
