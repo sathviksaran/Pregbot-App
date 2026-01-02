@@ -11,6 +11,14 @@ from datetime import datetime, timezone, timedelta
 from deep_translator import GoogleTranslator
 import time
 from zoneinfo import ZoneInfo
+from gtts import gTTS
+import uuid
+
+def generate_audio(text, lang):
+    filename = f"static/audio/{uuid.uuid4()}.mp3"
+    tts = gTTS(text=text, lang=lang)
+    tts.save(filename)
+    return filename
 
 HF_API_URL = os.environ.get("HF_API_URL")
 HF_TOKEN = os.environ.get("HF_TOKEN")
