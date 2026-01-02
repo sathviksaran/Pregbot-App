@@ -18,6 +18,7 @@ from deep_translator import GoogleTranslator
 # from nltk.corpus import wordnet
 # import signal
 import time
+from zoneinfo import ZoneInfo
 
 HF_API_URL = 'https://sathviksaran-pregbot-ml.hf.space/predict'
 
@@ -171,7 +172,7 @@ def protect_internal_route():
 
 @app.route("/internal/run-mail-jobs", methods=["POST"])
 def run_mail_jobs():
-    now = datetime.now().strftime("%H:%M")
+    now = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M")
 
     # EXACT daily time
     if now == "06:00":
@@ -606,7 +607,7 @@ def send_email_at_6():
 def check_and_send_emails():
     with app.app_context():
         try:
-            current_time = datetime.now().strftime("%H:%M")
+            current_time = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M")
             print(f"Current Time: {current_time}")
 
             # Query the database for routines with matching time
