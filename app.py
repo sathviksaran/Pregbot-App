@@ -1,26 +1,18 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash, jsonify, abort
-# import nltk
 import random
 import numpy as np
 import json
-# import pickle
-# from nltk.stem import WordNetLemmatizer
-# from tensorflow.keras.models import load_model # type: ignore
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
-# from flask_mail import Message,Mail
 from twilio.rest import Client
 import os
 import requests
 from datetime import datetime, timezone, timedelta
 from deep_translator import GoogleTranslator
-# from functools import lru_cache
-# from nltk.corpus import wordnet
-# import signal
 import time
 from zoneinfo import ZoneInfo
 
-HF_API_URL = 'https://sathviksaran-pregbot-ml.hf.space/predict'
+HF_API_URL = os.environ.get("HF_API_URL")
 
 def predict_intent_remote(text):
     response = requests.post(
@@ -58,27 +50,17 @@ app.config.update(
 
 
 BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
-SENDER_EMAIL = 'pregbotapp@gmail.com'
-SENDER_NAME = 'PREGBOT'
+SENDER_EMAIL = os.environ.get("SENDER_EMAIL")
+SENDER_NAME = os.environ.get("SENDER_EMAIL")
 
-# Configure Flask-Mail
-# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
-# app.config['MAIL_PORT'] = 587  # Use the appropriate port
-# app.config['MAIL_USE_TLS'] = True  # Or MAIL_USE_SSL=True for SSL
-# app.config['MAIL_USERNAME'] = 'mypregbot@gmail.com'
-# app.config['MAIL_PASSWORD'] = 'ijaefbyibmwtmobf'
-# app.config['MAIL_DEFAULT_SENDER'] = 'mypregbot@gmail.com'
-
-# mail = Mail(app)
-
-# Twilio account credentials
-account_sid = 'AC4923a8ee90fd7a3ca656b5e063edeb45'
-auth_token = '6638bd03af33a3b6d223cd7a549c7a36'
+account_sid = os.environ.get("TWILIO_ACCOUNT_SID")
+auth_token = os.environ.get("TWILIO_AUTH_TOKEN")
+from_number = os.environ.get("TWILIO_NUMBER")
 client = Client(account_sid, auth_token)
 def send_msg(to_phone_number, message):
     message = client.messages.create(
             body=message,
-            from_='+15407387218',
+            from_=from_number,
             to=to_phone_number
         )
 def send_email(to_email, subject, html_content):
@@ -103,7 +85,8 @@ def send_email(to_email, subject, html_content):
     response = requests.post(url, json=payload, headers=headers)
     response.raise_for_status()
 
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:LiWTXGZPopMlSrUIEldyHGUeRUlmeeqD@yamabiko.proxy.rlwy.net:34102/railway'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:LiWTXGZPopMlSrUIEldyHGUeRUlmeeqD@yamabiko.proxy.rlwy.net:34102/railway'
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DATABASE_URL")
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
