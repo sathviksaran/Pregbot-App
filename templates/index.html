@@ -297,7 +297,17 @@ ul.flashes {
     const languageSelect = document.getElementById('language-select');
     const voiceInputBtn = document.getElementById('voice-input-btn');
 
+    
+    function isFirefox() {
+      return navigator.userAgent.toLowerCase().includes("firefox");
+    }
+
+    
     voiceInputBtn.addEventListener('click', () => {
+      if (isFirefox()) {
+        alert("Voice input is not supported in Firefox. Please use Chrome or Edge.");
+        return;
+      }
       startSpeechRecognition();
     });
 
@@ -348,11 +358,6 @@ ul.flashes {
         return textToTranslate;
       }
     }
-
-  //   async function speakMessage(message) {
-  //   const utterance = new SpeechSynthesisUtterance(message);
-  //   speechSynthesis.speak(utterance);
-  // }
     
 async function speakMessage(message) {
   try {
