@@ -29,15 +29,14 @@ def setup_google_credentials():
 # Call this BEFORE using Google TTS
 setup_google_credentials()
 
-# Initialize client
-client = texttospeech.TextToSpeechClient()
 
-def google_tts(text, lang="en-IN", voice_type="NEURAL2"):
+def google_tts(text, lang="en-IN"):
+    client = texttospeech.TextToSpeechClient()
+
     synthesis_input = texttospeech.SynthesisInput(text=text)
 
     voice = texttospeech.VoiceSelectionParams(
         language_code=lang,
-        name=f"{lang}-{voice_type}",
         ssml_gender=texttospeech.SsmlVoiceGender.FEMALE
     )
 
