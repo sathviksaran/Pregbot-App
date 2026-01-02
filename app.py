@@ -163,6 +163,19 @@ def protect_internal_route():
         if token != os.environ.get("CRON_SECRET"):
             abort(401)
 
+@app.route("/internal/run-mail-jobs", methods=["POST"])
+def run_mail_jobs():
+    now = datetime.now().strftime("%H:%M")
+
+    # EXACT daily time
+    if now == "06:00":
+        send_email_at_6()
+
+    # other reminder logic can also live here
+    check_and_send_emails()
+
+    return {"status": "Mail job executed"}
+
 @app.before_request
 def check_launch_time():
     now = datetime.now(timezone(timedelta(hours=5, minutes=30)))
