@@ -29,6 +29,13 @@ def predict_intent_remote(text):
     response.raise_for_status()
     return response.json()["intent"]
 
+def translate_message(message, target_language): 
+    translated_message = GoogleTranslator(
+        source='auto',
+        target=target_language
+    ).translate(message)
+    return translated_message
+
 with open('bot.json') as json_file:
     intents = json.load(json_file)
 
