@@ -6,3 +6,5 @@ flask_mail
 twilio
 pymysql
 deep_translator
+gtts
+io
