@@ -18,7 +18,7 @@ HF_TOKEN = os.environ.get("HF_TOKEN")
 def predict_intent_remote(text):
     response = requests.post(
         HF_API_URL,
-        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {HF_TOKEN}",}
+        headers = {"Content-Type": "application/json", "Authorization": f"Bearer {HF_TOKEN}",},
         json={"text": text},
         timeout=5
     )
