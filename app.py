@@ -181,7 +181,7 @@ class PregnancyFormData(db.Model):
     sleep_quality = db.Column(db.String(20))
     hydration = db.Column(db.String(20))
     mood_changes = db.Column(db.String(20))
-    prenatal_checkups = db.Column(db.String(20))
+    prenatal_checkups = db.Column(db.Text)
 
 
 @app.before_request
@@ -196,7 +196,7 @@ def run_mail_jobs():
     now = datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%H:%M")
 
     # EXACT daily time
-    if now == "06:00":
+    if now == "12:40":
         send_email_at_6()
         send_msg_at_6()
 
